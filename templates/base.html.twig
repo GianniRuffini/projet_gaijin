@@ -1,19 +1,104 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {# Run `composer require symfony/webpack-encore-bundle`
-           and uncomment the following Encore helpers to start using Symfony UX #}
-        {% block stylesheets %}
-            {#{{ encore_entry_link_tags('app') }}#}
-        {% endblock %}
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="{{ asset('css/admin.min.css') }}">
+{% block stylesheets %}{% endblock %}
 
-        {% block javascripts %}
-            {#{{ encore_entry_script_tags('app') }}#}
-        {% endblock %}
-    </head>
-    <body>
+{% block javascripts %}{% endblock %}
+</head>
+<body>
+    <a href="/"><img src="{{ asset("images/mon_logo.png")}}" alt="logo" class="logo"></a>
+    {# NAVBAR #}
+        <header class="navbar navbar-inverse bs-docs-nav" role="banner">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                        <span class="sr-only">
+                            Toggle navigation
+                        </span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+                        <ul class="nav navbar-nav">
+                            <li><a href="#" class="dropdown-toggle" data-toggle="dropdown">GUIDE DE VOYAGE <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">HEBERGEMENTS</a></li>
+                                    <li><a href="#">TRANSPORTS</a></li>
+                                    <li><a href="#">AVIONS ET AEROPORTS</a></li>
+                                    <li><a href="#">BUDGET ET ARGENT AU JAPON</a></li>
+                                    <li><a href="#">CUISINE JAPONAISE</a></li>
+                                    <li><a href="#">DECALAGE HORAIRE AU JAPON</a></li>
+                                    <li><a href="#">FETES JAPONAISES</a></li>
+                                    <li><a href="#">TELEPHONE ET INTERNET AU JAPON</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="nav navbar-nav">
+                            <li><a href="#" class="dropdown-toggle" data-toggle="dropdown">VISITES AU JAPON <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">CARTE DU JAPON</a></li>
+                                    <li><a href="#">KANTO</a></li>
+                                    <li><a href="#">KANSAI</a></li>
+                                    <li><a href="#">CHUBU</a></li>
+                                    <li><a href="#">HOKKAIDO</a></li>
+                                    <li><a href="#">OKINAWA</a></li>
+                                    <li><a href="#">KYUSHU</a></li>
+                                    <li><a href="#">CHUGOKU</a></li>
+                                    <li><a href="#">SHIKOKU</a></li>
+                                    <li><a href="#">TOHOKU</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="nav navbar-nav">
+                            <li><a href="#" class="dropdown-toggle" data-toggle="dropdown">SOCIETE & CULTURE <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">VISAS</a></li>
+                                    <li><a href="#">SORTIR LE SOIR AU JAPON</a></li>
+                                    <li><a href="#">TRAVAILLER AU JAPON</a></li>
+                                    <li><a href="#">RELIGION ET SPIRITUALITE</a></li>
+                                    <li><a href="#">CONTES ET LEGENDES</a></li>
+                                    <li><a href="#">TATOUAGES AU JAPON</a></li>
+                                    <li><a href="#">MANGA</a></li>
+                                    <li><a href="#">ANIME</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="nav navbar-nav">
+                            <li><a href="#" class="dropdown-toggle" data-toggle="dropdown">COMMUNAUTE GAIJIN <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">KOTAETE (questions-réponse)</a></li>
+                                    <li><a href="#">ISSHONI (compagnon de voyage)</a></li>
+                                    <li><a href="#">MON ESPACE MEMBRE</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="nav navbar-nav navbar-right">
+                            <a href="#" class="user">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                </nav>
+            </div>
+        </header>
+    {# FIN NAVBAR #}
+    <div class="container">
         {% block body %}{% endblock %}
-    </body>
+    </div>
+
+    {# FOOTER #}
+        
+    {# FIN FOOTER #}
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
 </html>
