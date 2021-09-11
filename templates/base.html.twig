@@ -11,59 +11,221 @@
     <!--fontawesome-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ asset( 'css/admin.min.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     
 {% block stylesheets %}{% endblock %}
 
 {% block javascripts %}{% endblock %}
 </head>
 <body>
-    <header class="header">
-        <div class="header-inner">
-            <div class="container-fluid px-lg-5">
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    <div class="container-fluid">
-                        <a class="navbar-brand" href="#">Navbar</a>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"><i class="fas fa-bars" style="margin: 5px 0px 0px 0px;"></i></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul class="navbar-nav m-auto">
-                                <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="#">Products</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Downloads</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Enterprice</a>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">Pricing</a>
-                                    <div class="dropdown-menu" aria-labelleby="navbarDropdown">
-                                        <a class="dropdown-item"href="#">Action</a>
-                                        <a class="dropdown-item"href="#">Another action</a>
-                                        <div class="dropdown-divider">
-                                            <a class="dropdown-item"href="#">Something else here</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Blog</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Resources</a>
-                                </li>
-                            </ul>
-                            <form class="d-flex">
-                                <button class=" header-btn my-2 my-sm-0" type="submit">Subscribe free</button>
-                            </form>
-                        </div>
-                    </div>
-                </nav>
-            </div>
+<a href="{{ path('home') }}"><img src="{{ asset("images/mon_logo.png") }}" alt="logo" class="logo"></a>
+<header class="header ">
+    <div class="header-inner ">
+        <div class="container-fluid px-lg-5">
+            <nav class="navbar navbar-expand-lg my-navbar">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon">
+                        <i class="fas fa-bars" style="margin:5px 0px 0px 0px;"></i>
+                    </span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav m-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{{ path('home') }}">
+                                Accueil
+                                <span class="sr-only">
+                                    (current)
+                                </span>
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Guide de voyage
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">
+                                    Hébergements
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Transports
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Avions et aeroports
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Budget et argent au Japon
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Cuisines Japonaise
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Décalage horaire au Japon
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Fêtes Japonaise
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Téléphone et internet au Japon
+                                </a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Visites au Japon
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">
+                                    Carte du Japon
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Kanto
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Kansai
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Chubu
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Hokkaido
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Okinawa
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Kyushu
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Chugoku
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Shikoku
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Tohoku
+                                </a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Societe & culture
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">
+                                    Visas
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Sortir le soir au Japon
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Travailler au Japon
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Religion et spiritualité
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Contes et legendes
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Tatouages au Japon
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Manga
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Animé
+                                </a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Communauté Gaijin
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">
+                                    Kotaete (quéstions-réponses)
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Isshoni (compagnon de voyage)
+                                </a>
+                                {% if is_granted('ROLE_USER') %}
+                                <a class="dropdown-item" href="{{ path('profile') }}">
+                                    Mon espace membre
+                                </a>
+                                {% endif %}
+                            </div>
+                        </li>
+                    </ul>
+                    {% if is_granted('ROLE_USER') %}
+                    <form class="form-inline my-2 my-lg-0 ">
+                        <a class="header-btn my-2 my-sm-0" href="{{ path('app_logout') }}">
+                            Déconnexion
+                        </a>
+                        {% else %}
+                        <a class="header-btn my-2 my-sm-0" href="{{ path('app_login') }}">
+                            Connexion
+                        </a>
+                        {% endif %}
+
+                        {% if is_granted('ROLE_USER') %}
+                        <li class="nav-item text-white align-items-center d-flex ms-auto">
+                            <span>Bienvenue
+                            {% if app.user.pseudo is defined and app.user.pseudo is not null%}
+                            {{ app.user.pseudo }}
+                            {% elseif app.user.firstname is defined and app.user.firstname is not null %}
+                            {{ app.user.firstname}}
+                            {% else %}
+                            {{ app.user.email}}
+                        {% endif %}
+                            </span>
+                        </li>
+                        {% endif %}
+
+                        {% if not is_granted('ROLE_USER') %}
+                            <a class="header-btn my-2 my-sm-0 mr-2" href="{{ path('app_register') }}">
+                                Inscription
+                            </a>
+                        {% endif %}
+                    </form>
+                </div>
+            </nav>
+
         </div>
-    </header>
+    </div>
+
+</header>
+    
+<section class="content-banner"></section>
+
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    
+  <script src="https://code.jquery.com/jquery-3.5.1.js" ></script>
+  <script type="text/javascript">
+    $(function(){
+      var navbar = $('.header-inner');
+      $(window).scroll(function(){
+        if($(window).scrollTop() <=40){
+          navbar.removeClass('navbar-scroll');
+        }else{
+          navbar.addClass('navbar-scroll');
+        }
+      });
+    });
+  </script>
+ 
 
 {% block body %}{% endblock %}
 </body>
