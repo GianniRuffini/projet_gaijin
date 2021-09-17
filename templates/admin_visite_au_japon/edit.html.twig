@@ -1,0 +1,13 @@
+{% extends 'base-admin.html.twig' %}
+
+{% block title %}Edit VisiteAuJapon{% endblock %}
+
+{% block body %}
+    <h1>Edit VisiteAuJapon</h1>
+
+    {{ include('admin_visite_au_japon/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('admin_visite_au_japon_index') }}">back to list</a>
+
+    {{ include('admin_visite_au_japon/_delete_form.html.twig') }}
+{% endblock %}

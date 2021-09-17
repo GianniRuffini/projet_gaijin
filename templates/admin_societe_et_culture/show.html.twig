@@ -1,0 +1,34 @@
+{% extends 'base-admin.html.twig' %}
+
+{% block title %}SocieteEtCulture{% endblock %}
+
+{% block body %}
+    <h1>SocieteEtCulture</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ societe_et_culture.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ societe_et_culture.titre }}</td>
+            </tr>
+            <tr>
+                <th>SousTitre</th>
+                <td>{{ societe_et_culture.sousTitre }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ societe_et_culture.description }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_societe_et_culture_index') }}">back to list</a>
+
+    <a href="{{ path('admin_societe_et_culture_edit', {'id': societe_et_culture.id}) }}">edit</a>
+
+    {{ include('admin_societe_et_culture/_delete_form.html.twig') }}
+{% endblock %}

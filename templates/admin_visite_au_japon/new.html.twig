@@ -1,0 +1,11 @@
+{% extends 'base-admin.html.twig' %}
+
+{% block title %}New VisiteAuJapon{% endblock %}
+
+{% block body %}
+    <h1>Create new VisiteAuJapon</h1>
+
+    {{ include('admin_visite_au_japon/_form.html.twig') }}
+
+    <a href="{{ path('admin_visite_au_japon_index') }}">back to list</a>
+{% endblock %}

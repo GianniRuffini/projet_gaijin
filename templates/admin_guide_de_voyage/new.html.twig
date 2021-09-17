@@ -1,0 +1,11 @@
+{% extends 'base-admin.html.twig' %}
+
+{% block title %}New GuideDeVoyage{% endblock %}
+
+{% block body %}
+    <h1>Create new GuideDeVoyage</h1>
+
+    {{ include('admin_guide_de_voyage/_form.html.twig') }}
+
+    <a href="{{ path('admin_guide_de_voyage_index') }}">back to list</a>
+{% endblock %}

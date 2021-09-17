@@ -1,0 +1,11 @@
+{% extends 'base-admin.html.twig' %}
+
+{% block title %}New SocieteEtCulture{% endblock %}
+
+{% block body %}
+    <h1>Create new SocieteEtCulture</h1>
+
+    {{ include('admin_societe_et_culture/_form.html.twig') }}
+
+    <a href="{{ path('admin_societe_et_culture_index') }}">back to list</a>
+{% endblock %}
