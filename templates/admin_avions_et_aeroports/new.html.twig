@@ -1,0 +1,11 @@
+{% extends 'base-admin.html.twig' %}
+
+{% block title %}New AvionsEtAeroports{% endblock %}
+
+{% block body %}
+    <h1>Create new AvionsEtAeroports</h1>
+
+    {{ include('admin_avions_et_aeroports/_form.html.twig') }}
+
+    <a href="{{ path('admin_avions_et_aeroports_index') }}">back to list</a>
+{% endblock %}

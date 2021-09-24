@@ -1,0 +1,13 @@
+{% extends 'base-admin.html.twig' %}
+
+{% block title %}Edit FeteJaponaise{% endblock %}
+
+{% block body %}
+    <h1>Edit FeteJaponaise</h1>
+
+    {{ include('admin_fete_japonaise/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('admin_fete_japonaise_index') }}">back to list</a>
+
+    {{ include('admin_fete_japonaise/_delete_form.html.twig') }}
+{% endblock %}

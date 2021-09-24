@@ -1,0 +1,11 @@
+{% extends 'base-admin.html.twig' %}
+
+{% block title %}New DecalageHoraireAuJapon{% endblock %}
+
+{% block body %}
+    <h1>Create new DecalageHoraireAuJapon</h1>
+
+    {{ include('admin_decalage_horaire_au_japon/_form.html.twig') }}
+
+    <a href="{{ path('admin_decalage_horaire_au_japon_index') }}">back to list</a>
+{% endblock %}

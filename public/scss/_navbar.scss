@@ -1,3 +1,12 @@
+/* ============ desktop view ============ */
+@media all and (min-width: 992px) {
+	.navbar .nav-item .dropdown-menu{ display: none; }
+	.navbar .nav-item:hover .nav-link{   }
+	.navbar .nav-item:hover .dropdown-menu{ display: block; }
+	.navbar .nav-item .dropdown-menu{ margin-top:0; }
+}	
+/* ============ desktop view .end// ============ */
+
 body{
 	font-family: 'Montserrat' sans-serif;
 	background-color: white;
@@ -8,6 +17,26 @@ body{
 	}
 	.navbar-nav{
 		margin: auto
+	}
+
+	.log{
+		padding: 80px 80px 80px 50px;
+    	height: 620px;
+    	width: 50%;
+    	max-width: 700px;
+		margin: auto;
+		justify-content: center;
+		border: 2px black;
+	}
+
+	.conect{
+		text-align: center;
+	}
+
+	.nav-log{
+		color: black;
+		text-decoration: none;
+		font-weight: bold;
 	}
 
 }

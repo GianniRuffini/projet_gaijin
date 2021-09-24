@@ -1,0 +1,11 @@
+{% extends 'base-admin.html.twig' %}
+
+{% block title %}New TelephoneEtInternetAuJapon{% endblock %}
+
+{% block body %}
+    <h1>Create new TelephoneEtInternetAuJapon</h1>
+
+    {{ include('admin_telephone_et_internet_au_japon/_form.html.twig') }}
+
+    <a href="{{ path('admin_telephone_et_internet_au_japon_index') }}">back to list</a>
+{% endblock %}

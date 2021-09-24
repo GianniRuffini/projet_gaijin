@@ -1,0 +1,39 @@
+{% extends 'base-admin.html.twig' %}
+
+{% block title %}BudgetEtArgentAuJapon index{% endblock %}
+
+{% block body %}
+    <h1>BudgetEtArgentAuJapon index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>SousTitre</th>
+                <th>Description</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for budget_et_argent_au_japon in budget_et_argent_au_japons %}
+            <tr>
+                <td>{{ budget_et_argent_au_japon.id }}</td>
+                <td>{{ budget_et_argent_au_japon.titre }}</td>
+                <td>{{ budget_et_argent_au_japon.sousTitre }}</td>
+                <td>{{ budget_et_argent_au_japon.description }}</td>
+                <td>
+                    <a href="{{ path('admin_budget_et_argent_au_japon_show', {'id': budget_et_argent_au_japon.id}) }}">show</a>
+                    <a href="{{ path('admin_budget_et_argent_au_japon_edit', {'id': budget_et_argent_au_japon.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_budget_et_argent_au_japon_new') }}">Create new</a>
+{% endblock %}
