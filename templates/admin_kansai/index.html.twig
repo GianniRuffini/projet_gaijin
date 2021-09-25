@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Kansai index{% endblock %}
+
+{% block body %}
+    <h1>Kansai index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>SousTitre</th>
+                <th>Description</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for kansai in kansais %}
+            <tr>
+                <td>{{ kansai.id }}</td>
+                <td>{{ kansai.titre }}</td>
+                <td>{{ kansai.sousTitre }}</td>
+                <td>{{ kansai.description }}</td>
+                <td>
+                    <a href="{{ path('admin_kansai_show', {'id': kansai.id}) }}">show</a>
+                    <a href="{{ path('admin_kansai_edit', {'id': kansai.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_kansai_new') }}">Create new</a>
+{% endblock %}

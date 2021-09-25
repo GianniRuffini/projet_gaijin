@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Kansai{% endblock %}
+
+{% block body %}
+    <h1>Create new Kansai</h1>
+
+    {{ include('admin_kansai/_form.html.twig') }}
+
+    <a href="{{ path('admin_kansai_index') }}">back to list</a>
+{% endblock %}

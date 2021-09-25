@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Kansai{% endblock %}
+
+{% block body %}
+    <h1>Edit Kansai</h1>
+
+    {{ include('admin_kansai/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('admin_kansai_index') }}">back to list</a>
+
+    {{ include('admin_kansai/_delete_form.html.twig') }}
+{% endblock %}
