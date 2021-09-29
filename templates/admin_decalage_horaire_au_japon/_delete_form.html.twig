@@ -1,4 +1,0 @@
-<form method="post" action="{{ path('admin_decalage_horaire_au_japon_delete', {'id': decalage_horaire_au_japon.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
-    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ decalage_horaire_au_japon.id) }}">
-    <button class="btn">Delete</button>
-</form>

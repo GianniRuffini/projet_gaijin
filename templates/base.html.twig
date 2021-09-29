@@ -43,72 +43,72 @@
                     </a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="{{ path('guide_de_voyage')}}" role="button" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                         Guide de voyage
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="{{ path('hebergements')}}">
+                        <li><a class="dropdown-item" href="{{ path('hebergements') }}">
                             Hébergements
                         </a></li>
-                        <li><a class="dropdown-item" href="{{ path('transports')}}">
+                        <li><a class="dropdown-item" href="#">
                             Transports
                         </a></li>
-                        <li><a class="dropdown-item" href="{{ path('avions_et_aeroports')}}">
+                        <li><a class="dropdown-item" href="#">
                             Avions et aeroports
                         </a></li>
-                        <li><a class="dropdown-item" href="{{ path('budget_et_argent_au_japon')}}">
+                        <li><a class="dropdown-item" href="#">
                             Budget et argent au Japon
                         </a></li>
-                        <li><a class="dropdown-item" href="{{ path('cuisine_japonaise')}}">
+                        <li><a class="dropdown-item" href="#">
                             Cuisines Japonaise
                         </a></li>
-                        <li><a class="dropdown-item" href="{{ path('decalage_horaire_au_japon')}}">
+                        <li><a class="dropdown-item" href="#">
                             Décalage horaire au Japon
                         </a></li>
-                        <li><a class="dropdown-item" href="{{ path('fete_japonaise')}}">
+                        <li><a class="dropdown-item" href="#">
                             Fêtes Japonaise
                         </a></li>
-                        <li><a class="dropdown-item" href="{{ path('telephone_et_internet_au_japon')}}">
+                        <li><a class="dropdown-item" href="#">
                             Téléphone et internet au Japon
                         </a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="{{ path('visite_au_japon')}}" role="button" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                         Visites au Japon
                     </a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="{{ path('kanto')}}">
+                        <a class="dropdown-item" href="#">
                             Kanto
                         </a>
-                        <a class="dropdown-item" href="{{ path('kansai')}}">
+                        <a class="dropdown-item" href="#">
                             Kansai
                         </a>
-                        <a class="dropdown-item" href="{{ path('hebergements')}}">
+                        <a class="dropdown-item" href="#">
                             Chubu
                         </a>
-                        <a class="dropdown-item" href="{{ path('hebergements')}}">
+                        <a class="dropdown-item" href="#">
                             Hokkaido
                         </a>
-                        <a class="dropdown-item" href="{{ path('hebergements')}}">
+                        <a class="dropdown-item" href="#">
                             Okinawa
                         </a>
-                        <a class="dropdown-item" href="{{ path('hebergements')}}">
+                        <a class="dropdown-item" href="#">
                             Kyushu
                         </a>
-                        <a class="dropdown-item" href="{{ path('hebergements')}}">
+                        <a class="dropdown-item" href="#">
                             Chugoku
                         </a>
-                        <a class="dropdown-item" href="{{ path('hebergements')}}">
+                        <a class="dropdown-item" href="#">
                             Shikoku
                         </a>
-                        <a class="dropdown-item" href="{{ path('hebergements')}}">
+                        <a class="dropdown-item" href="#">
                             Tohoku
                         </a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="{{ path('societe_et_culture')}}" role="button" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                         Societe & culture
                     </a>
                     <div class="dropdown-menu">
@@ -139,7 +139,7 @@
                     </div>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="{{ path('communaute_gaijin')}}" role="button" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                         Communauté Gaijin
                     </a>
                     <div class="dropdown-menu">
@@ -196,6 +196,8 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+<div class="container">
 {% block body %}{% endblock %}
+</div>
 </body>
 </html>

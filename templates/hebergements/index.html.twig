@@ -3,5 +3,23 @@
 {% block title %}Hello HebergementsController!{% endblock %}
 
 {% block body %}
-<h1>Hebergements</h1>
+<div class="row my-5 align-items-center">
+    {% if hebergements|length > 0 %}
+        {% for hebergement in hebergements %}
+            <h1>
+                {{hebergement.titreHebergement}}
+            </h1>
+            <h2>
+                {{hebergement.sousTitreHebergement}}
+            </h2>
+            {% endfor %}
+        {% else %}
+            <div class="col-12">
+                <h4>
+                    Aucune photos 
+                                        
+                </h4>
+            </div>
+    {% endif %}
+</div>
 {% endblock %}

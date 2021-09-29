@@ -1,0 +1,13 @@
+{% extends 'base-admin.html.twig' %}
+
+{% block title %}Edit Contenus{% endblock %}
+
+{% block body %}
+    <h1>Edit Contenus</h1>
+
+    {{ include('admin_contenus/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('admin_contenus_index') }}">back to list</a>
+
+    {{ include('admin_contenus/_delete_form.html.twig') }}
+{% endblock %}

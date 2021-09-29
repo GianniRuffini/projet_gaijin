@@ -1,0 +1,80 @@
+{% extends 'base-admin.html.twig' %}
+
+{% block title %}Contenus index{% endblock %}
+
+{% block body %}
+    <h1>Contenus index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre Guide De Voyage</th>
+                <th>Sous-Titre Guide De Voyage</th>
+                <th>Description Guide De Voyage</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for contenu in contenuses %}
+            <tr>
+                <td>{{ contenu.id }}</td>
+                <td>{{ contenu.titreGuideDeVoyage }}</td>
+                <td>{{ contenu.sousTitreGuideDeVoyage }}</td>
+                <td>{{ contenu.descriptionGuideDeVoyage }}</td>
+                <td>
+                    <a href="{{ path('admin_contenus_show', {'id': contenu.id}) }}">show</a>
+                    <a href="{{ path('admin_contenus_edit', {'id': contenu.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_contenus_new') }}">Create new</a>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre Hebergement</th>
+                <th>Sous-Titre Hebergement</th>
+                <th>Description Hebergement</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for contenu in contenuses %}
+            <tr>
+                <td>{{ contenu.id }}</td>
+                <td>{{ contenu.titreHebergement }}</td>
+                <td>{{ contenu.sousTitreHebergement }}</td>
+                <td>{{ contenu.descriptionHebergement }}</td>
+                <td>
+                    <a href="{{ path('admin_contenus_show', {'id': contenu.id}) }}">show</a>
+                    <a href="{{ path('admin_contenus_edit', {'id': contenu.id}) }}">edit</a>
+                </td>
+            </tr>
+            <tr>
+                <td>{{ contenu.id }}</td>
+                <td>{{ contenu.titreGuideDeVoyage }}</td>
+                <td>{{ contenu.sousTitreGuideDeVoyage }}</td>
+                <td>{{ contenu.descriptionGuideDeVoyage }}</td>
+                <td>
+                    <a href="{{ path('admin_contenus_show', {'id': contenu.id}) }}">show</a>
+                    <a href="{{ path('admin_contenus_edit', {'id': contenu.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ path('admin_contenus_new') }}">Create new</a>
+{% endblock %}
