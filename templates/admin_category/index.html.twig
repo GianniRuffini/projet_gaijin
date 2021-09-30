@@ -1,9 +1,9 @@
 {% extends 'base-admin.html.twig' %}
 
-{% block title %}Contenus index{% endblock %}
+{% block title %}Category index{% endblock %}
 
 {% block body %}
-    <h1>Contenus index</h1>
+    <h1>Category index</h1>
 
     <table class="table">
         <thead>
@@ -16,15 +16,15 @@
             </tr>
         </thead>
         <tbody>
-        {% for contenu in contenuses %}
+        {% for category in categories %}
             <tr>
-                <td>{{ contenu.id }}</td>
-                <td>{{ contenu.titre }}</td>
-                <td>{{ contenu.sousTitre }}</td>
-                <td>{{ contenu.description }}</td>
+                <td>{{ category.id }}</td>
+                <td>{{ category.titre }}</td>
+                <td>{{ category.sousTitre }}</td>
+                <td>{{ category.description }}</td>
                 <td>
-                    <a href="{{ path('admin_contenus_show', {'id': contenu.id}) }}">show</a>
-                    <a href="{{ path('admin_contenus_edit', {'id': contenu.id}) }}">edit</a>
+                    <a href="{{ path('admin_category_show', {'id': category.id}) }}">show</a>
+                    <a href="{{ path('admin_category_edit', {'id': category.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -35,5 +35,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('admin_contenus_new') }}">Create new</a>
+    <a href="{{ path('admin_category_new') }}">Create new</a>
 {% endblock %}

@@ -2,14 +2,14 @@
 
 namespace App\Entity;
 
-use App\Repository\ContenusRepository;
+use App\Repository\CategoryRepository;
 use Doctrine\ORM\Mapping as ORM;
-use Gedmo\Mapping\Annotaion as Gedmo;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
- * @ORM\Entity(repositoryClass=ContenusRepository::class)
+ * @ORM\Entity(repositoryClass=CategoryRepository::class)
  */
-class Contenus
+class Category
 {
     /**
      * @ORM\Id

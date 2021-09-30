@@ -52,10 +52,6 @@
                             <div class="sb-nav-link-icon"><i class="fa fa-tachometer"></i></div>
                             Dashboard
                         </a>
-                        <a class="nav-link" href="{{ path('admin_contenus_index') }}">
-                            <div class="sb-nav-link-icon"><i class="fa fa-tachometer"></i></div>
-                            Contenus
-                        </a>
                         <div class="sb-sidenav-menu-heading">Interface</div>
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                             <div class="sb-nav-link-icon"><i class="fa fa-desktop"></i></div>
@@ -91,76 +87,8 @@
                                 <div class="collapse" id="pagesCollapseEdit" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                                     <nav class="sb-sidenav-menu-nested nav">
                                         <a class="nav-link" href="{{ path('admin_home_index') }}">Accueil</a>
-                                        
-                                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseGuide" aria-expanded="false" aria-controls="pagesCollapseAuth">
-                                            Guide de voyage
-                                            <div class="sb-sidenav-collapse-arrow"><i class="fa fa-angle-down"></i></div>
-                                        </a>
-                                        <div class="collapse" id="pagesCollapseGuide" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                                            <nav class="sb-sidenav-menu-nested nav">
-                                                <a class="nav-link" href="#">Accueil guide de voyage</a>
-                                                <a class="nav-link" href="#">Hébergements</a>
-                                                <a class="nav-link" href="#">Transports</a>
-                                                <a class="nav-link" href="#">Avions et Aeroports </a>
-                                                <a class="nav-link" href="#">Budget et argent au japon</a>
-                                                <a class="nav-link" href="#">Cuisine japonaise</a>
-                                                <a class="nav-link" href="#">Décalage horaire</a>
-                                                <a class="nav-link" href="#">Fêtes japonaises</a>
-                                                <a class="nav-link" href="#">Téléphone et internet au japon</a>
-                                            </nav>
-                                        </div>
-
-                                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseVisite" aria-expanded="false" aria-controls="pagesCollapseAuth">
-                                            Visites au Japon
-                                            <div class="sb-sidenav-collapse-arrow"><i class="fa fa-angle-down"></i></div>
-                                        </a>
-                                        <div class="collapse" id="pagesCollapseVisite" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                                            <nav class="sb-sidenav-menu-nested nav">
-                                                <a class="nav-link" href="#">Accueil visites au Japon</a>
-                                                <a class="nav-link" href="#">Kanto</a>
-                                                <a class="nav-link" href="#">Kansai</a>
-                                                <a class="nav-link" href="#">Chubu</a>
-                                                <a class="nav-link" href="#">Hokkaido</a>
-                                                <a class="nav-link" href="#">Okinawa</a>
-                                                <a class="nav-link" href="#">Kyushu</a>
-                                                <a class="nav-link" href="#">Chugoku</a>
-                                                <a class="nav-link" href="#">Shikoku</a>
-                                                <a class="nav-link" href="#">Tohoku</a>
-                                            </nav>
-                                        </div>
-                                        
-                                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseSociete" aria-expanded="false" aria-controls="pagesCollapseAuth">
-                                            Société & culture
-                                            <div class="sb-sidenav-collapse-arrow"><i class="fa fa-angle-down"></i></div>
-                                        </a>
-                                        <div class="collapse" id="pagesCollapseSociete" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                                            <nav class="sb-sidenav-menu-nested nav">
-                                                <a class="nav-link" href="#">Accueil société & culture</a>
-                                                <a class="nav-link" href="#">Visas</a>
-                                                <a class="nav-link" href="#">Sortir le soir au Japon</a>
-                                                <a class="nav-link" href="#">Travailler au Japon</a>
-                                                <a class="nav-link" href="#">Religion et spritualité</a>
-                                                <a class="nav-link" href="#">Contes et légendes</a>
-                                                <a class="nav-link" href="#">Tatouages au Japon</a>
-                                                <a class="nav-link" href="#">Manga</a>
-                                                <a class="nav-link" href="#">Anime</a>
-                                            </nav>
-                                        </div>
-                                        
-                                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseCom" aria-expanded="false" aria-controls="pagesCollapseAuth">
-                                            Communaute Gaijin
-                                            <div class="sb-sidenav-collapse-arrow"><i class="fa fa-angle-down"></i></div>
-                                        </a>
-                                        <div class="collapse" id="pagesCollapseCom" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                                            <nav class="sb-sidenav-menu-nested nav">
-                                                <a class="nav-link" href="#">Accueil communaute gaijin</a>
-                                                <a class="nav-link" href="#">Kotaete (questions - réponses)</a>
-                                                <a class="nav-link" href="#">Isshoni (compagnons de voyage)</a>
-                                                <a class="nav-link" href="#">Mon espace membre</a>
-                                            </nav>
-                                        </div>
-
-
+                                        <a class="nav-link" href="{{ path('admin_category_index') }}">Category</a>
+                                        <a class="nav-link" href="{{ path('admin_contenus_index') }}">Contenus</a>
                                         <a class="nav-link" href="{{ path('admin_photo_index') }}">Photos</a>
                                         <a class="nav-link" href="{{ path('admin_video_index') }}">Videos</a>
                                     </nav>
