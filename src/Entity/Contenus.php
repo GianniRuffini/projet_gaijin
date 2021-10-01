@@ -4,7 +4,6 @@ namespace App\Entity;
 
 use App\Repository\ContenusRepository;
 use Doctrine\ORM\Mapping as ORM;
-use Gedmo\Mapping\Annotaion as Gedmo;
 
 /**
  * @ORM\Entity(repositoryClass=ContenusRepository::class)
@@ -34,10 +33,9 @@ class Contenus
     private $description;
 
     /**
-     * @Gedmo\Slug(fields={"titre", "sousTitre", "description"})
-     * @ORM\Column(type="string", length=255)
+     * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="type")
      */
-    private $slug;
+    private $category;
 
     public function getId(): ?int
     {
@@ -80,9 +78,16 @@ class Contenus
         return $this;
     }
 
-    public function getSlug(): ?string
+    public function getCategory(): ?Category
     {
-        return $this->slug;
+        return $this->category;
+    }
+
+    public function setCategory(?Category $category): self
+    {
+        $this->category = $category;
+
+        return $this;
     }
 
 }

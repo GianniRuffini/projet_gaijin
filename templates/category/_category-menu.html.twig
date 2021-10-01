@@ -1,0 +1,20 @@
+{% for cat in cats %}
+
+<li class="nav-item dropdown">
+    <a class="nav-link {% if cat.type|length >0 %}dropdown-toggle{% endif %}" href="{{ path('show_cat', {'catId':cat.id}) }}" role="button" aria-haspopup="true" aria-expanded="false">
+            {{ cat.titre }}
+    </a>
+    {% if cat.type|length >0 %}
+    <ul class="dropdown-menu">
+        {% for t in cat.type %}
+        <li>
+            <a class="dropdown-item" href="{{path('show_content', {'contentId':t.id})}}">
+                {{ t.titre }}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</li>
+
+{% endfor %}

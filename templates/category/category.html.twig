@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ cat.titre }}
+{% endblock %}
+
+{% block body %}
+    <h1>
+        {{ cat.titre }}
+    </h1>
+    <h2>
+        {{ cat.sousTitre }}
+    </h2>
+    <p>
+        {{ cat.description}}
+    </p>
+
+{% if cat.id == 2 %}
+
+    <p>
+        coucou
+            
+            
+    </p>
+{% endif %}
+
+{% endblock %}

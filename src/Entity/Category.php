@@ -3,8 +3,9 @@
 namespace App\Entity;
 
 use App\Repository\CategoryRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
-use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * @ORM\Entity(repositoryClass=CategoryRepository::class)
@@ -34,10 +35,14 @@ class Category
     private $description;
 
     /**
-     * @Gedmo\Slug(fields={"titre", "sousTitre", "description"})
-     * @ORM\Column(type="string", length=255)
+     * @ORM\OneToMany(targetEntity=Contenus::class, mappedBy="category")
      */
-    private $slug;
+    private $type;
+
+    public function __construct()
+    {
+        $this->type = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -80,9 +85,33 @@ class Category
         return $this;
     }
 
-    public function getSlug(): ?string
+    /**
+     * @return Collection|Contenus[]
+     */
+    public function getType(): Collection
     {
-        return $this->slug;
+        return $this->type;
     }
 
+    public function addType(Contenus $type): self
+    {
+        if (!$this->type->contains($type)) {
+            $this->type[] = $type;
+            $type->setCategory($this);
+        }
+
+        return $this;
+    }
+
+    public function removeType(Contenus $type): self
+    {
+        if ($this->type->removeElement($type)) {
+            // set the owning side to null (unless already changed)
+            if ($type->getCategory() === $this) {
+                $type->setCategory(null);
+            }
+        }
+
+        return $this;
+    }
 }
