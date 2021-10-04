@@ -5,15 +5,15 @@
             {{ cat.titre }}
     </a>
     {% if cat.type|length >0 %}
-    <ul class="dropdown-menu">
+    <div class="dropdown-menu">
         {% for t in cat.type %}
-        <li>
+        
             <a class="dropdown-item" href="{{path('show_content', {'contentId':t.id})}}">
                 {{ t.titre }}
             </a>
-        </li>
+        
         {% endfor %}
-    </ul>
+    </div>
     {% endif %}
 </li>
 
