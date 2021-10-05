@@ -1,0 +1,38 @@
+{% extends 'base-admin.html.twig' %}
+
+{% block title %}Faq index{% endblock %}
+
+{% block body %}
+    <h1>Faq index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Question</th>
+                <th>Categorie</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for faq in faqs %}
+            <tr>
+                <td>{{ faq.id }}</td>
+                <td>{{ faq.titre }}</td>
+                <td>{{ faq.question }}</td>
+                <td>{{ faq.categorie }}</td>
+                <td>
+                    <a href="{{ path('admin_faq_show', {'id': faq.id}) }}">show</a>
+                    <a href="{{ path('admin_faq_edit', {'id': faq.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_faq_new') }}">Create new</a>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base-admin.html.twig' %}
+
+{% block title %}CategoryFaq{% endblock %}
+
+{% block body %}
+    <h1>CategoryFaq</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ category_faq.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ category_faq.titre }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_category_faq_index') }}">back to list</a>
+
+    <a href="{{ path('admin_category_faq_edit', {'id': category_faq.id}) }}">edit</a>
+
+    {{ include('admin_categori_faq/_delete_form.html.twig') }}
+{% endblock %}

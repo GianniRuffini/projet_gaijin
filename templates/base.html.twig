@@ -36,7 +36,7 @@
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="{{ path('home') }}">
-                        Accueil
+                        ACCUEIL
                         <span class="visually-hidden">
                             (current)
                         </span>
@@ -44,6 +44,21 @@
                 </li>
                 {# on appel le rendu du controller #}
                 {{ render(controller('App\\Controller\\CategoryController::categoryMenu')) }}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="{{ path('communaute') }}" role="button" aria-haspopup="true" aria-expanded="false">
+                        COMMUNAUTE
+                    </a>
+                    {% if is_granted('ROLE_USER') %}
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{{ path('faq') }}">
+                            KOTAETE (questions - réponses)
+                            </a>
+                            <a class="dropdown-item" href="{{ path('profile') }}">
+                            MON ESPACE MEMBRE
+                            </a>
+                        </div>
+                    {% endif %}
+                </li>
 
             </ul>
             {% if is_granted('ROLE_USER') %}

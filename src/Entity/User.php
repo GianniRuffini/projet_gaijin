@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
@@ -96,6 +98,16 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @ORM\Column(type="boolean")
      */
     private $isVerified = false;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Faq::class, mappedBy="faqUser")
+     */
+    private $faqUser;
+
+    public function __construct()
+    {
+        $this->faqUser = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -302,6 +314,36 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setRole($role)
     {
         $this->role = $role;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Faq[]
+     */
+    public function getFaqUser(): Collection
+    {
+        return $this->faqUser;
+    }
+
+    public function addFaqUser(Faq $faqUser): self
+    {
+        if (!$this->faqUser->contains($faqUser)) {
+            $this->faqUser[] = $faqUser;
+            $faqUser->setFaqUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeFaqUser(Faq $faqUser): self
+    {
+        if ($this->faqUser->removeElement($faqUser)) {
+            // set the owning side to null (unless already changed)
+            if ($faqUser->getFaqUser() === $this) {
+                $faqUser->setFaqUser(null);
+            }
+        }
 
         return $this;
     }
