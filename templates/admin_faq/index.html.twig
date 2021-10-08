@@ -12,6 +12,7 @@
                 <th>Titre</th>
                 <th>Question</th>
                 <th>Categorie</th>
+                <th>Valider</th>
             </tr>
         </thead>
         <tbody>
@@ -21,6 +22,7 @@
                 <td>{{ faq.titre }}</td>
                 <td>{{ faq.question }}</td>
                 <td>{{ faq.categorie }}</td>
+                <td>{{ faq.isPublished }}</td>
                 <td>
                     <a href="{{ path('admin_faq_show', {'id': faq.id}) }}">show</a>
                     <a href="{{ path('admin_faq_edit', {'id': faq.id}) }}">edit</a>

@@ -13,6 +13,8 @@ class CategoryFaqType extends AbstractType
     {
         $builder
             ->add('titre')
+            ->add('categorie')
+            ->add('question')
         ;
     }
 

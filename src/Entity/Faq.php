@@ -37,6 +37,11 @@ class Faq
      */
     private $faqUser;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $isPublished;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -86,6 +91,18 @@ class Faq
     public function setFaqUser(?User $faqUser): self
     {
         $this->faqUser = $faqUser;
+
+        return $this;
+    }
+
+    public function getIsPublished(): ?bool
+    {
+        return $this->isPublished;
+    }
+
+    public function setIsPublished(bool $isPublished): self
+    {
+        $this->isPublished = $isPublished;
 
         return $this;
     }

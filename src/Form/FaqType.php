@@ -7,6 +7,7 @@ use App\Entity\CategoryFaq;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class FaqType extends AbstractType
@@ -20,6 +21,7 @@ class FaqType extends AbstractType
                 'class' => CategoryFaq::class,
                 'choice_label' => 'titre',
             ])
+            ->add('isPublished')
         ;
     }
 
