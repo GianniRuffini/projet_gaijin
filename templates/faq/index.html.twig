@@ -1,9 +1,53 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}FAQ{% endblock %}
+{% block title %}
+    FAQ
+{% endblock %}
 
 {% block body %}
     <div class="container">
+        <div class="text-center my-3">
+            <img src="{{ asset("images/photoLocal/kotaete.png") }}" alt="logo"></a>
+
+            <h1>
+                KOTAETE : QUESTIONS-RÉPONSES SUR LE JAPON 
+                            
+            </h1>
+            <p>
+                Kotaete est notre module questions-réponses. Celui-ci vous permet de soumettre aux Kanpai-chan (la communauté Kanpai) toutes vos interrogations liées au Japon.
+                                Cette section, qui agit comme un forum moderne sur le Japon, est évidemment ouverte à toutes et à tous : posez vos questions et partagez vos connaissances japonaises en répondant aux autres participant(e)s. 
+                            
+            </p>
+
+            <a href="{{ path('faq_new') }}"><button type="button" class="btn btn-dark">Poser une question</button></a>
+
+        </div>
+
+        <div class="container">
+            <h2>
+                Dernières questions posées
+            </h2>
+            {% for faq in faqs %}
+            <h3>
+                <a href="{{ path('faq_show', {'id': faq.id}) }}">
+                    {{ faq.titre }}
+                </a>
+            </h3>
+
+            <p>
+                {{ faq.question }}
+            </p>
+        {% endfor %}
+        </div>
+        <div class="container">
+            <h2>
+                Les questions par catégorie
+            </h2>
+            {% for categorie in categorie %}
+                <ul>
+                    <li><a href="{{ path('faq_show_categorie', {'id': categorie.id}) }}">{{ categorie.titre }}</a></li>
+                </ul>
+            {% endfor %}
+        </div>
+        {% endblock %}
         
-    </div>
-{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+
+    {% if categorie.titre is defined and categorie.titre is not null %}
+        {{ categorie.titre }}
+    {% else %}
+        
+    {% endif %}
+
+{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+        <h1>
+            {{ categorie.titre }}
+        </h1>
+        {% for faqs in faq %}
+        
+    
+        {% if categorie.id == faqs.categorie.id %}
+        <div class="card">
+            {{ faqs.titre }}
+            {{ faqs.question }}
+        </div>
+        {% endif %}
+{% endfor %}
+
+    </div>
+{% endblock %}
