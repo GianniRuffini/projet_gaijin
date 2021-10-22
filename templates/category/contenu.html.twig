@@ -5,15 +5,171 @@
 {% endblock %}
 
 {% block body %}
-    <h1>
-        {{ contenu.titre }}
-    </h1>
-    <h2>
-        {{ contenu.sousTitre }}
-    </h2>
-    <p>
-        {{ contenu.description }}
-    </p>
 
+{# <div class="lotImage" #}
+    {% if contenu.id == 1 %}
+        <div class="img1">
+            <img src="{{ asset("images/photoLocal/maison-japonaise.jpeg") }}" alt="maison">
+        </div>
+    {% endif %}
+    
+    {% if contenu.id == 2 %}
+        <div class="img1">
+            <img src="{{ asset("images/photoLocal/kyoto.jpeg") }}" alt="kyoto">
+        </div>
+    {% endif %}
+    
+    {% if contenu.id == 3 %}
+        <div class="img1">
+            <img src="{{ asset("images/photoLocal/soleil-couchant.jpeg") }}" alt="soleil-couchant">
+        </div>
+    {% endif %}
+    
+    {% if contenu.id == 4 %}
+        <div class="img1">
+            <img src="{{ asset("images/photoLocal/yens-billets.jpeg") }}" alt="yens-billets">
+        </div>
+    {% endif %}
+    
+    {% if contenu.id == 5 %}
+        <div class="img1">
+            <img src="{{ asset("images/photoLocal/cuisine-japonaise.jpeg") }}" alt="cuisine-japonaise">
+        </div>
+    {% endif %}
+    
+    {% if contenu.id == 6 %}
+        <div class="img1">
+            <img src="{{ asset("images/photoLocal/decalage-horaire.gif") }}" alt="decalage-horaire">
+        </div>
+    {% endif %}
+    
+    {% if contenu.id == 7 %}
+        <div class="img1">
+            <img src="{{ asset("images/photoLocal/kodomo.jpeg") }}" alt="kodomo">
+        </div>
+    {% endif %}
+    
+    {% if contenu.id == 8 %}
+        <div class="img1">
+            <img src="{{ asset("images/photoLocal/pocket-wifi.jpeg") }}" alt="pocket-wifi">
+        </div>
+    {% endif %}
+    
+    {% if contenu.id == 9 %}
+        <div class="img1">
+            <img src="{{ asset("images/photoLocal/shibuya-sky.jpeg") }}" alt="shibuya-sky">
+        </div>
+    {% endif %}
+    
+    {% if contenu.id == 10 %}
+        <div class="img1">
+            <img src="{{ asset("images/photoLocal/kyoto-village.jpeg") }}" alt="kyoto-village">
+        </div>
+    {% endif %}
+    
+    {% if contenu.id == 11 %}
+        <div class="img1">
+            <img src="{{ asset("images/photoLocal/chubu.jpeg") }}" alt="chubu">
+        </div>
+    {% endif %}
+    
+    {% if contenu.id == 12 %}
+        <div class="img1">
+            <img src="{{ asset("images/photoLocal/hokkaido.jpeg") }}" alt="hokkaido">
+        </div>
+    {% endif %}
+    
+    {% if contenu.id == 13 %}
+        <div class="img1">
+            <img src="{{ asset("images/photoLocal/okinawa.jpeg") }}" alt="okinawa">
+        </div>
+    {% endif %}
+    
+    {% if contenu.id == 14 %}
+        <div class="img1">
+            <img src="{{ asset("images/photoLocal/kyushu.jpeg") }}" alt="kyushu">
+        </div>
+    {% endif %}
+    
+    {% if contenu.id == 15 %}
+        <div class="img1">
+            <img src="{{ asset("images/photoLocal/miyajima.jpeg") }}" alt="miyajima">
+        </div>
+    {% endif %}
+    
+    {% if contenu.id == 16 %}
+        <div class="img1">
+            <img src="{{ asset("images/photoLocal/shikoku.jpeg") }}" alt="shikoku">
+        </div>
+    {% endif %}
+    
+    {% if contenu.id == 17 %}
+        <div class="img1">
+            <img src="{{ asset("images/photoLocal/sanriku.jpeg") }}" alt="sanriku">
+        </div>
+    {% endif %}
+    
+    {% if contenu.id == 18 %}
+        <div class="img1">
+            <img src="{{ asset("images/photoLocal/social-apartments.jpeg") }}" alt="social-apartments">
+        </div>
+    {% endif %}
+    
+    {% if contenu.id == 19 %}
+        <div class="img1">
+            <img src="{{ asset("images/photoLocal/shinjuku-kabukicho.jpeg") }}" alt="shinjuku-kabukicho">
+        </div>
+    {% endif %}
+    
+    {% if contenu.id == 20 %}
+        <div class="img1">
+            <img src="{{ asset("images/photoLocal/business-au-japon.jpeg") }}" alt="business-au-japon">
+        </div>
+    {% endif %}
+    
+    {% if contenu.id == 21 %}
+        <div class="img1">
+            <img src="{{ asset("images/photoLocal/bouddha-kamakura.jpeg") }}" alt="bouddha-kamakura">
+        </div>
+    {% endif %}
+    
+    {% if contenu.id == 22 %}
+        <div class="img1">
+            <img src="{{ asset("images/photoLocal/okayama.jpeg") }}" alt="okayama">
+        </div>
+    {% endif %}
+    
+    {% if contenu.id == 23 %}
+        <div class="img1">
+            <img src="{{ asset("images/photoLocal/yoyogi.jpeg") }}" alt="yoyogi">
+        </div>
+    {% endif %}
+    
+    {% if contenu.id == 24 %}
+        <div class="img1">
+            <img src="{{ asset("images/photoLocal/musee-manga.jpeg") }}" alt="musee-manga">
+        </div>
+    {% endif %}
+    
+    {% if contenu.id == 26 %}
+        <div class="img1">
+            <img src="{{ asset("images/photoLocal/anime.jpeg") }}" alt="anime">
+        </div>
+    {% endif %}
+{# </div> #}
+
+<div class="container">
+    <div class="text-center">
+        <h1>
+            {{ contenu.titre }}
+        </h1>
+        <h2>
+            {{ contenu.sousTitre }}
+        </h2>
+        <p>
+            {{ contenu.description }}
+        </p>
+    </div>
+</div>
     
 {% endblock %}
