@@ -19,35 +19,45 @@
                             
             </p>
 
-            <a href="{{ path('faq_new') }}"><button type="button" class="btn btn-dark">Poser une question</button></a>
-
+            
         </div>
 
         <div class="container">
-            <h2>
-                Dernières questions posées
-            </h2>
-            {% for faq in faqs %}
-            <h3>
-                <a href="{{ path('faq_show', {'id': faq.id}) }}">
-                    {{ faq.titre }}
-                </a>
-            </h3>
+            <div class="row">
+                <div class="col-9">
+                    <h2 id="titleColor">
+                        Dernières questions posées
+                    </h2>
+                    {% for faq in faqs %}
+                    <h3>
+                        <a href="{{ path('faq_show', {'id': faq.id}) }}">
+                            {{ faq.titre }}
+                        </a>
+                    </h3>
 
-            <p>
-                {{ faq.question }}
-            </p>
-        {% endfor %}
-        </div>
-        <div class="container">
-            <h2>
-                Les questions par catégorie
-            </h2>
-            {% for categorie in categorie %}
-                <ul>
-                    <li><a href="{{ path('faq_show_categorie', {'id': categorie.id}) }}">{{ categorie.titre }}</a></li>
-                </ul>
-            {% endfor %}
-        </div>
+                    <p>
+                        {{ faq.question }}
+                    </p>
+                {% endfor %}
+                <hr>
+                <a href="{{ path('faq_new') }}"><button type="button" class="btn btn-dark">Poser une question</button></a>
+                </div>
+
+                <div class="col-3">    
+                    <h2 id="titleColor">
+                        Les questions par catégorie
+                    </h2>
+                    {% for categorie in categorie %}
+                        <ul>
+                            <li><a href="{{ path('faq_show_categorie', {'id': categorie.id}) }}">{{ categorie.titre }}</a></li>
+                        </ul>
+                    {% endfor %}
+                
+                </div>
+            </div>
+            
+    </div>
+        
+
         {% endblock %}
         

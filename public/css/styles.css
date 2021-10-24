@@ -59,7 +59,7 @@
   --bs-body-font-size: 1rem;
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.5;
-  --bs-body-color: #212529;
+  --bs-body-color: #383838;
   --bs-body-bg: #fff;
 }
 
@@ -233,12 +233,37 @@ sup {
   top: -0.5em;
 }
 
+/* debut changement couleur icon */
+li .icon1 a{
+  color:#ffffff;
+}
+li .icon2 a{
+  color:#ffffff;
+}
+li .icon3 a{
+  color:#ffffff;
+}
+li .icon4 a{
+  color:#ffffff;
+}
+li .icon5 a{
+  color:#ffffff;
+}
+li .icon6 a{
+  color:#ffffff;
+}
+/* fin changement couleur icon */
+
+#titleColor{
+  color: #8a8a76;
+}
+
 a {
-  color: #0d6efd;
-  text-decoration: underline;
+  color: #b41c0f;
+  text-decoration: none;
 }
 a:hover {
-  color: #0a58ca;
+  color: #383838;
 }
 
 a:not([href]):not([class]), a:not([href]):not([class]):hover {

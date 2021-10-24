@@ -27,7 +27,7 @@
 
     <div class="container">
         <div class="text-center">
-            <h1>
+            <h1 class="">
                 {{ cat.titre }}
             </h1>
             <h2>
@@ -38,6 +38,7 @@
             </p>
         
 
+            {# debut carte du japon #}
             {% if cat.id == 2 %}
                 <h1>CARTE DU JAPON</h1>
                 <div class="map" id="map">
@@ -206,6 +207,7 @@
                 </div>
                 
             {% endif %}
+            {# fin carte du japon #}
         </div>
     </div>
 

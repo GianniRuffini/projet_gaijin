@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset( 'css/admin.min.css') }}">
+    <link rel="stylesheet" href="{{ asset( 'css/styles.css') }}">
     
 {% block stylesheets %}{% endblock %}
 
@@ -32,7 +33,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse col-9 ps-5" id="navbarColor02">
+        <div class="collapse navbar-collapse" id="navbarColor02">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="{{ path('home') }}">
@@ -44,11 +45,11 @@
                 </li>
                 {# on appel le rendu du controller #}
                 {{ render(controller('App\\Controller\\CategoryController::categoryMenu')) }}
+                {% if is_granted('ROLE_USER') %}
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="{{ path('communaute') }}" role="button" aria-haspopup="true" aria-expanded="false">
                         COMMUNAUTE
                     </a>
-                    {% if is_granted('ROLE_USER') %}
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="{{ path('faq') }}">
                             KOTAETE (questions - réponses)
@@ -58,6 +59,32 @@
                             </a>
                         </div>
                     {% endif %}
+                </li>
+
+                <li class="ps-2 m-auto" style="display:inline-block;">
+                    <div class="icon1">
+                    <a href="{{ path('app_login') }}"><i class="fas fa-user"></i></a>
+                    </div>
+
+                    <div class="icon2">
+                        <a href="#"><i class="far fa-envelope"></i></a>
+                    </div>
+                    
+                    <div class="icon3">
+                        <a href="https://www.facebook.com/kanpai.fr"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                    
+                    <div class="icon4">
+                        <a href="https://twitter.com/KanpaiFR"><i class="fab fa-twitter"></i></a>
+                    </div>
+                    
+                    <div class="icon5">
+                        <a href="https://www.instagram.com/kanpai.fr/"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    
+                    <div class="icon6">
+                        <a href="https://www.youtube.com/user/Kanpaifr"><i class="fas fa-play"></i></a>
+                    </div>
                 </li>
 
             </ul>
@@ -94,32 +121,6 @@
                     </a>
                 {% endif %}
             </form> #}
-        </div>
-
-        <div class="col-3 text-center me-3">
-            <div class="icon1">
-                <a href="{{ path('app_login') }}"><i class="fas fa-user"></i></a>
-            </div>
-
-            <div class="icon2">
-                <a href="#"><i class="far fa-envelope"></i></a>
-            </div>
-            
-            <div class="icon3">
-                <a href="https://www.facebook.com/kanpai.fr"><i class="fab fa-facebook-f"></i></a>
-            </div>
-            
-            <div class="icon4">
-                <a href="https://twitter.com/KanpaiFR"><i class="fab fa-twitter"></i></a>
-            </div>
-            
-            <div class="icon5">
-                <a href="https://www.instagram.com/kanpai.fr/"><i class="fab fa-instagram"></i></a>
-            </div>
-            
-            <div class="icon6">
-                <a href="https://www.youtube.com/user/Kanpaifr"><i class="fas fa-play"></i></a>
-            </div>
         </div>
 
     </div>
