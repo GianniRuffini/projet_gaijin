@@ -9,10 +9,10 @@
     <link rel="stylesheet" href="{{ asset( 'js/navbar.js') }}">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://bootswatch.com/5/slate/bootstrap.css">
+    {# <link rel="stylesheet" href="https://bootswatch.com/5/slate/bootstrap.css">
     <link rel="stylesheet" href="https://bootswatch.com/5/slate/bootstrap.min.css">
     <link rel="stylesheet" href="https://bootswatch.com/5/slate/_variables.scss">
-    <link rel="stylesheet" href="https://bootswatch.com/5/slate/_bootswatch.scss">
+    <link rel="stylesheet" href="https://bootswatch.com/5/slate/_bootswatch.scss"> #}
 
     <!--fontawesome-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -62,29 +62,60 @@
                 </li>
 
                 <li class="ps-2 m-auto" style="display:inline-block;">
-                    <div class="icon1">
-                    <a href="{{ path('app_login') }}"><i class="fas fa-user"></i></a>
-                    </div>
+                    <!-- User -->
+                        <a
+                            class="btn btn-primary btn-floating m-1"
+                            style="background-color: #b41c0f; width: 25px; height: 25px; margin-left: auto;margin-right: auto;"
+                            href="{{ path('app_login') }}"
+                            role="button"
+                            ><i class="fas fa-user"></i>
+                        </a>
 
-                    <div class="icon2">
-                        <a href="#"><i class="far fa-envelope"></i></a>
-                    </div>
+                    <!-- contact -->
+                        <a
+                            class="btn btn-primary btn-floating m-1"
+                            style="background-color: #364449; width: 25px; height: 25px; margin-left: auto;margin-right: auto;"
+                            href="#!"
+                            role="button"
+                            ><i class="far fa-envelope"></i>
+                        </a>
+
+                    <!-- Facebook -->
+                        <a
+                            class="btn btn-primary btn-floating m-1"
+                            style="background-color: #3b5998; width: 25px; height: 25px; margin-left: auto;margin-right: auto;"
+                            href="https://www.facebook.com/kanpai.fr"
+                            role="button"
+                            ><i class="fab fa-facebook-f"></i
+                        ></a>
+
+                    <!-- Twitter -->
+                        <a
+                            class="btn btn-primary btn-floating m-1"
+                            style="background-color: #1da1f1; width: 25px; height: 25px; margin-left: auto;margin-right: auto;"
+                            href="https://twitter.com/KanpaiFR"
+                            role="button"
+                            ><i class="fab fa-twitter"></i
+                        ></a>
+
+                    <!-- Instagram -->
+                        <a
+                            class="btn btn-primary btn-floating m-1"
+                            style="background-color: #e3405f; width: 25px; height: 25px; margin-left: auto;margin-right: auto;"
+                            href="https://www.instagram.com/kanpai.fr/"
+                            role="button"
+                            ><i class="fab fa-instagram"></i
+                        ></a>
+                        
+                    <!-- Google -->
+                        <a
+                            class="btn btn-primary btn-floating m-1"
+                            style="background-color: #ff0000; width: 25px; height: 25px; margin-left: auto;margin-right: auto;"
+                            href="https://www.youtube.com/user/Kanpaifr"
+                            role="button"
+                            ><i class="fas fa-play"></i>
+                        </a>
                     
-                    <div class="icon3">
-                        <a href="https://www.facebook.com/kanpai.fr"><i class="fab fa-facebook-f"></i></a>
-                    </div>
-                    
-                    <div class="icon4">
-                        <a href="https://twitter.com/KanpaiFR"><i class="fab fa-twitter"></i></a>
-                    </div>
-                    
-                    <div class="icon5">
-                        <a href="https://www.instagram.com/kanpai.fr/"><i class="fab fa-instagram"></i></a>
-                    </div>
-                    
-                    <div class="icon6">
-                        <a href="https://www.youtube.com/user/Kanpaifr"><i class="fas fa-play"></i></a>
-                    </div>
                 </li>
 
             </ul>
@@ -126,7 +157,142 @@
     </div>
 </nav>
 {# Fin navbar#}
+
+
 {% block body %}{% endblock %}
+
+
+{% block footer %}{% endblock %}
+{# debut footer #}
+<footer class="text-center text-white" style="background-color: #eaeae1;">
+    <!-- Grid container -->
+    <div class="container p-4">
+        <!-- Section: Images -->
+        <section class="">
+            <div class="row">
+                <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                    <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
+                        <img src="{{ asset("images/photoLocal/wallpaper-japon.jpg") }}" class="w-100" />
+                        <a href="#!">
+                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                    <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
+                        <img src="{{ asset("images/photoLocal/wallpapertip_japan.jpg") }}" class="w-100" />
+                        <a href="#!">
+                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                    <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
+                        <img src="{{ asset("images/photoLocal/cerisier.jpeg") }}" class="w-100" />
+                        <a href="#!">
+                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                    <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
+                        <img src="{{ asset("images/photoLocal/fuji.jpeg") }}" class="w-100" />
+                        <a href="#!">
+                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                    <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
+                        <img src="{{ asset("images/photoLocal/kyoto-palais.jpeg") }}" class="w-100" />
+                        <a href="#!">
+                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                    <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
+                        <img src="{{ asset("images/photoLocal/shibuya-night.jpeg") }}" class="w-100" />
+                        <a href="#!">
+                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <!-- Section: Images -->
+    </div>
+    <!-- Grid container -->
+    <section class="mb-4">
+
+    <!-- User -->
+      <a
+        class="btn btn-primary btn-floating m-1"
+        style="background-color: #b41c0f; width: 30px; height: 30px;"
+        href="#!"
+        role="button"
+        ><i class="fas fa-user"></i></a>
+
+       <!-- Github -->
+      <a
+        class="btn btn-primary btn-floating m-1"
+        style="background-color: #364449; width: 30px; height: 30px; margin:auto"
+        href="#!"
+        role="button"
+        ><i class="far fa-envelope"></i></a>
+
+      <!-- Facebook -->
+      <a
+        class="btn btn-primary btn-floating m-1"
+        style="background-color: #3b5998; width: 30px; height: 30px;"
+        href="#!"
+        role="button"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
+
+      <!-- Twitter -->
+      <a
+        class="btn btn-primary btn-floating m-1"
+        style="background-color: #1da1f1; width: 30px; height: 30px;"
+        href="#!"
+        role="button"
+        ><i class="fab fa-twitter"></i
+      ></a>
+
+      <!-- Instagram -->
+      <a
+        class="btn btn-primary btn-floating m-1"
+        style="background-color: #e3405f; width: 30px; height: 30px;"
+        href="#!"
+        role="button"
+        ><i class="fab fa-instagram"></i
+      ></a>
+
+      <!-- Google -->
+      <a
+        class="btn btn-primary btn-floating m-1"
+        style="background-color: #ff0000; width: 30px; height: 30px;"
+        href="#!"
+        role="button"
+        ><i class="fas fa-play"></i></a>
+
+    </section>
+    <!-- Section: Social media -->
+  </div>
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: #c9c9b9;">
+        © 2020 Copyright:
+            
+        <a class="text-white" href="https://mdbootstrap.com/">
+            MDBootstrap.com
+        </a>
+    </div>
+<!-- Copyright -->
+</footer>
+
+
+{# fin footer #}
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>

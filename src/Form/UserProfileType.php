@@ -26,7 +26,7 @@ class UserProfileType extends AbstractType
             ->remove('roles')
             ->remove('password')
             ->remove('isVerified')
-            ->add('Modifier', SubmitType::class, [ 'attr'=>["class"=>"btn-success mt-3"] ])
+            ->remove('Modifier', SubmitType::class, [ 'attr'=>["class"=>"btn-success mt-3"] ])
         ;
     }
 
