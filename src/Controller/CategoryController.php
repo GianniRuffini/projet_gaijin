@@ -32,9 +32,8 @@ class CategoryController extends AbstractController
     #[Route('/category/content/{contentId}', name: 'show_content')]
     public function showContent(int $contentId, ContenusRepository $contenusRepository): Response
     {
-        $contenu = $contenusRepository->find($contentId);
         return $this->render('category/contenu.html.twig', [
-            'contenu' => $contenu,
+            'contenu' => $contenusRepository->find($contentId)
         ]);
     }
 
