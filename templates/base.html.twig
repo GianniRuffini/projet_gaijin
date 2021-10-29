@@ -78,45 +78,45 @@
                         {% endif %}
 
                         <!-- contact -->
-                            <a
+                            {# <a
                                 class="icon2 btn btn-primary btn-floating m-1"
                                 href="#!"
                                 role="button"
                                 ><i class="far fa-envelope"></i>
-                            </a>
+                            </a> #}
 
                         <!-- Facebook -->
-                            <a
+                            {# <a
                                 class="icon3 btn btn-primary btn-floating m-1"
                                 href="https://www.facebook.com/kanpai.fr"
                                 role="button"
                                 ><i class="fab fa-facebook-f"></i
-                            ></a>
+                            ></a> #}
 
                         <!-- Twitter -->
-                            <a
+                            {# <a
                                 class="icon4 btn btn-primary btn-floating m-1"
                                 href="https://twitter.com/KanpaiFR"
                                 role="button"
                                 ><i class="fab fa-twitter"></i
-                            ></a>
+                            ></a> #}
 
                         <!-- Instagram -->
-                            <a
+                            {# <a
                                 class="icon5 btn btn-primary btn-floating m-1"
                                 href="https://www.instagram.com/kanpai.fr/"
                                 role="button"
                                 ><i class="fab fa-instagram"></i
-                            ></a>
+                            ></a> #}
                             
-                        <!-- Google -->
-                            <a
+                        <!-- youtube -->
+                            {# <a
                                 class="icon6 btn btn-primary btn-floating m-1"
                                 href="https://www.youtube.com/user/Kanpaifr"
                                 role="button"
                                 ><i class="fas fa-play"></i>
                             </a>
-                        
+                         #}
                     </li>
 
                 </ul>
@@ -142,11 +142,15 @@
     </nav>
     {# Fin navbar#}
 
-    {% block body %}{% endblock %}
-</body>
 
 
-    {% block footer %}{% endblock %}
+<div class="container">
+{% block body %}{% endblock %}
+</div>
+
+<div id="espace_body"></div>
+
+
     {# debut footer #}
     <footer class="text-center text-white" id="footer" style="background-color: #eaeae1;">
         <!-- Grid container -->
@@ -273,9 +277,12 @@
             </div>
         <!-- Copyright -->
     </footer>
+    {% block footer %}{% endblock %}
+
 </div>
 
 {# fin footer #}
+</body>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

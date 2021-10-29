@@ -1,10 +1,30 @@
+// serparateur apres les titre
 .separator{
     height: 17px;
     background-color: #b41b0f;
     width: 92px;
     margin: auto;
 }
+// fin
 
+// taille police du site
 p{
     font-size: 18px;
+}
+
+// position deconexion dans profile
+.deco{
+    position: absolute;
+    right: 20px;
+}
+
+// agrandissement du body (provisoire en attente de contenue 
+#espace_body{
+    height: 600px;
+}
+
+// mise en forme du formulaire du profile
+.form-profile{
+    display: table-cell;
+    text-align: center;
 }

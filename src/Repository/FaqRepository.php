@@ -19,6 +19,14 @@ class FaqRepository extends ServiceEntityRepository
         parent::__construct($registry, Faq::class);
     }
 
+    public function findDernierFaq()
+    {
+        $qb = $this->createQueryBuilder('o')
+            ->orderBy('o.id', 'DESC')
+            ->setMaxResults(10);
+        return $qb->getQuery()->getResult();
+    }
+
     // /**
     //  * @return Faq[] Returns an array of Faq objects
     //  */

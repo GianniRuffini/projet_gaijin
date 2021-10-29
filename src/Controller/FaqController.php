@@ -19,7 +19,7 @@ class FaqController extends AbstractController
     public function index(FaqRepository $faqRepository, CategoryFaqRepository $categoryFaqRepository): Response
     {
         return $this->render('faq/index.html.twig', [
-            'faqs' => $faqRepository->findAll(),
+            'faqs' => $faqRepository->findDernierFaq(),
             'categorie' => $categoryFaqRepository->findAll()
         ]);
     }
