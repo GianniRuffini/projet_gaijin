@@ -1,0 +1,35 @@
+{% extends 'base-admin.html.twig' %}
+
+{% block title %}CategoryHome index{% endblock %}
+
+{% block body %}
+    <h1>CategoryHome index</h1>
+
+    <table class="table" data-sorting="true" data-filtering="true" data-paging="true" data-paging-size="3">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for category_home in category_homes %}
+            <tr>
+                <td>{{ category_home.id }}</td>
+                <td>{{ category_home.titre }}</td>
+                <td>
+                    <a href="{{ path('admin_category_home_show', {'id': category_home.id}) }}">show</a>
+                    <a href="{{ path('admin_category_home_edit', {'id': category_home.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_category_home_new') }}">Create new</a>
+{% endblock %}

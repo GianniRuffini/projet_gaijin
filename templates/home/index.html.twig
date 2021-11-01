@@ -6,43 +6,108 @@
 
 {% block body %}
 {# carousel #}
-<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-<div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
-</div>
-<div class="carousel-inner">
-    <div class="carousel-item active">
-        <img src="{{asset('images/photoLocal/carousel/image1.jpg')}}" class="d-block w-100" alt="...">
-        <div class="carousel-caption d-none d-md-block">
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
     </div>
-    </div>
-    <div class="carousel-item">
-        <img src="{{asset('images/photoLocal/carousel/image2.jpg')}}" class="d-block w-100" alt="...">
-        <div class="carousel-caption d-none d-md-block">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="{{asset('images/photoLocal/carousel/temple _of_pure.jpg')}}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h3>Gaijin vous aide à préparer votre</h3>
+                <h1>Voyage au Japon</h1>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="{{asset('images/photoLocal/carousel/image2.jpg')}}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h3>Gaijin vous aide à préparer votre</h3>
+                <h1>Voyage au Japon</h1>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="{{asset('images/photoLocal/carousel/image3.jpg')}}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h3>Gaijin vous aide à préparer votre</h3>
+                <h1>Voyage au Japon</h1>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="{{asset('images/photoLocal/carousel/shibuya.jpg')}}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h3>Gaijin vous aide à préparer votre</h3>
+                <h1>Voyage au Japon</h1>
+            </div>
         </div>
     </div>
-    <div class="carousel-item">
-        <img src="{{asset('images/photoLocal/carousel/image3.jpg')}}" class="d-block w-100" alt="...">
-        <div class="carousel-caption d-none d-md-block">
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+    </div>
+{# fin #}
+
+{# à voir en ce moment #}
+    <div class="container">
+        <div class="text-center my-5">
+            <img src="{{ asset('images/photoLocal/logoTitre/logo-tong.png')}}" style="width: 60px; heigth: 60px;" alt="logo-tong">
+            <h2>À VOIR EN CE MOMENT AU JAPON</h2>
+            <div class="separator"></div>
         </div>
     </div>
-    <div class="carousel-item">
-        <img src="{{asset('images/photoLocal/carousel/image4.jpg')}}" class="d-block w-100" alt="...">
-        <div class="carousel-caption d-none d-md-block">
+
+    <div class="row small-gutters">
+    <div class="col-md-8 col-lg-6 travel d-flex flex-grow-1 mb-3">
+        <a href="/voyage-japon/novembre-que-faire" class="homepage-block-content d-flex flex-grow-1 lazy lazy" data-bgset="/sites/default/files/styles/hp_hori/public/uploads/2017/10/yoshimine-dera-kyoto-17.jpg [(max-width:768px)] | /sites/default/files/styles/hp_hori_lg/public/uploads/2017/10/yoshimine-dera-kyoto-17.jpg">
+            <div class="content font-weight-bold d-flex flex-grow-1 flex-column align-content-center flex-wrap justify-content-center text-white text-center p-2 ie-flex">
+                <h3 class="title-shadow-light fs-18">Que faire en novembre au Japon</h3>
+                <span class="separator mb-0"></span>
+            </div>
+        </a>
+    </div>
+    <div class="col-md-16 col-lg-18">
+        <div class="row small-gutters flex-nowrap flex-md-wrap position-relative wrap-with-glider" data-slidesToShow="2.25" data-reset="768">
+            <div class="mb-3 d-flex flex-grow-1 col-md-8">
+                <a href="/societe-japonaise/vaccination-covid-19-japon" class="homepage-block-content lazy d-flex flex-grow-1" data-bgset="/sites/default/files/styles/hp_hori/public/uploads/2021/03/vaccin-covid-japon.jpg">
+                    <div class="content font-weight-bold d-flex flex-grow-1 flex-column align-content-center flex-wrap justify-content-center text-white text-center p-2 ie-flex">
+                        <h3 class="title-shadow-light fs-18">La vaccination Covid-19 au Japon</h3>
+                        <span class="separator mb-0"></span>
+                    </div>
+                </a>
+            </div>
+            <div class="mb-3 d-flex flex-grow-1 col-md-8">
+                <a href="/automne-japon" class="homepage-block-content lazy d-flex flex-grow-1" data-bgset="/sites/default/files/styles/hp_hori/public/kawaguchiko-momiji-fuji-24.jpg">
+                    <div class="content font-weight-bold d-flex flex-grow-1 flex-column align-content-center flex-wrap justify-content-center text-white text-center p-2 ie-flex">
+                        <h3 class="title-shadow-light fs-18">Automne au Japon</h3>
+                        <span class="separator mb-0"></span>
+                    </div>
+                </a>
+            </div>
+            <div class="mb-3 d-flex flex-grow-1 col-md-8">
+                <a href="/voyage-japon/covid-19-coronavirus-quand-comment-2020-2021" class="homepage-block-content lazy d-flex flex-grow-1" data-bgset="/sites/default/files/styles/hp_hori/public/uploads/2020/04/tokyo-2020-asakusa-1.jpg">
+                    <div class="content font-weight-bold d-flex flex-grow-1 flex-column align-content-center flex-wrap justify-content-center text-white text-center p-2 ie-flex">
+                        <h3 class="title-shadow-light fs-18">Covid-19 : quand et comment voyager au Japon face au Coronavirus en 2021 et 2022</h3>
+                        <span class="separator mb-0"></span>
+                    </div>
+                </a>
+            </div>
+            <div class="mb-3 d-flex flex-grow-1 col-md-8">
+                <a href="/voyage-japon/empeche-reouverture-frontieres-japonaises-fin-2021" class="homepage-block-content lazy d-flex flex-grow-1" data-bgset="/sites/default/files/styles/hp_hori/public/uploads/2021/09/fermeture-frontieres-japon-2021.jpg">
+                    <div class="content font-weight-bold d-flex flex-grow-1 flex-column align-content-center flex-wrap justify-content-center text-white text-center p-2 ie-flex">
+                        <h3 class="title-shadow-light fs-18">Ce qui empêche la réouverture des frontières japonaises avant la fin 2021</h3>
+                        <span class="separator mb-0"></span>
+                    </div>
+                </a>
+            </div>
         </div>
     </div>
-</div>
-<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-</button>
-<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-</button>
-</div>
+
 {# fin #}
 {% endblock %}

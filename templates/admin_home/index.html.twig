@@ -9,20 +9,22 @@
     <table class="table" data-sorting="true" data-filtering="true" data-paging="true" data-paging-size="3">
         <thead>
             <tr>
-                <th>Id</th>
                 <th>Titre</th>
                 <th>SousTitre</th>
                 <th>Description</th>
+                <th>ImageName</th>
+                <th>Categories</th>
                 <th>actions</th>
             </tr>
         </thead>
         <tbody>
         {% for home in homes %}
             <tr>
-                <td>{{ home.id }}</td>
                 <td>{{ home.titre }}</td>
                 <td>{{ home.sousTitre }}</td>
                 <td>{{ home.description }}</td>
+                <td><img src="{{ asset('images/photos/' ~ home.imageName ) }}" alt="{{ home.titre }}" class="img-list-admin"></td>
+                <td>{{ home.category }}</td>
                 <td>
                     <a href="{{ path('admin_home_show', {'id': home.id}) }}">show</a>
                     <a href="{{ path('admin_home_edit', {'id': home.id}) }}">edit</a>

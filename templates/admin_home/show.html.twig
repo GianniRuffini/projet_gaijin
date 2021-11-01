@@ -24,6 +24,22 @@
                 <th>Description</th>
                 <td>{{ home.description }}</td>
             </tr>
+            <tr>
+                <th>ImageName</th>
+                <td>{{ home.imageName }}</td>
+            </tr>
+            <tr>
+                <th>ImageSize</th>
+                <td>{{ home.imageSize }}</td>
+            </tr>
+            <tr>
+                <th>UpdatedAt</th>
+                <td>{{ home.updatedAt ? home.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Categorie</th>
+                <td>{{ home.category }}</td>
+            </tr>
         </tbody>
     </table>
 

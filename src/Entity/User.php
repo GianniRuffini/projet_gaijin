@@ -13,7 +13,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
- * @UniqueEntity(fields={"email"}, message="There is already an account with this email")
+ * @UniqueEntity(fields={"email"}, message="Impossible de créer un compte utilisateur avec cet email. ")
  */
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
@@ -71,6 +71,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * @var string The hashed password
      * @ORM\Column(type="string")
+     * @Assert\NotBlank(message="Veuillez saisir une valeur.")
+     * @Assert\NotCompromisedPassword(message="Ce mot de passe a été divulgué lors d'une fuite de donées")
+     * @Assert\Regex(pattern="/^(?=.*[a-zà-Ÿ])(?=.*[A-ZÀ-Ÿ])(?=.*[0-9])(?=.*[â-zà-ÿA-ZÀ-Ý0-9]).{12,}$/", message="Le mot de passe doit être composé de caractères dont au minimum : 1 lettre minuscule, 1 lettre majuscule, et un carectère spéciaux")
      */
     private $password;
 

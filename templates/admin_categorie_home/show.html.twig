@@ -1,0 +1,26 @@
+{% extends 'base-admin.html.twig' %}
+
+{% block title %}CategoryHome{% endblock %}
+
+{% block body %}
+    <h1>CategoryHome</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ category_home.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ category_home.titre }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_category_home_index') }}">back to list</a>
+
+    <a href="{{ path('admin_category_home_edit', {'id': category_home.id}) }}">edit</a>
+
+    {{ include('admin_categorie_home/_delete_form.html.twig') }}
+{% endblock %}
