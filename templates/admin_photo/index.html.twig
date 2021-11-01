@@ -15,18 +15,15 @@
                 <th>ImageName</th>
                 {#<th>ImageSize</th>#}
                 {#<th>UpdatedAt</th>#}
-                {#<th>actions</th>#}
+                <th>actions</th>
             </tr>
         </thead>
         <tbody>
         {% for photo in photos %}
             <tr>
-                <td>{{ photo.id }}</td>
                 <td>{{ photo.titre }}</td>
                 <td>{{ photo.description }}</td>
                 <td><img src="{{ asset('images/photos/' ~ photo.imageName ) }}" alt="{{ photo.titre }}" class="img-list-admin"></td>
-                <td>{{ photo.imageSize }}</td>
-                <td>{{ photo.updatedAt ? photo.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
                     <a href="{{ path('admin_photo_show', {'id': photo.id}) }}">show</a>
                     <a href="{{ path('admin_photo_edit', {'id': photo.id}) }}">edit</a>

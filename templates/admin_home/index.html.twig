@@ -23,7 +23,7 @@
                 <td>{{ home.titre }}</td>
                 <td>{{ home.sousTitre }}</td>
                 <td>{{ home.description }}</td>
-                <td><img src="{{ asset('images/photos/' ~ home.imageName ) }}" alt="{{ home.titre }}" class="img-list-admin"></td>
+                <td><img src="{{ asset('images/accueil/' ~ home.imageName ) }}" alt="{{ home.titre }}" class="img-list-admin"></td>
                 <td>{{ home.category }}</td>
                 <td>
                     <a href="{{ path('admin_home_show', {'id': home.id}) }}">show</a>

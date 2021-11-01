@@ -13,15 +13,14 @@
                 <th>Titre</th>
                 <th>Description</th>
                 <th>VideoName</th>
-                {#<th>VideoSize</th>
-                <th>UpdatedAt</th>
-                <th>actions</th>#}
+                {# <th>VideoSize</th>
+                <th>UpdatedAt</th> #}
+                <th>actions</th>
             </tr>
         </thead>
         <tbody>
         {% for video in videos %}
             <tr>
-                <td>{{ video.id }}</td>
                 <td>{{ video.titre }}</td>
                 <td>{{ video.description }}</td>
                 <td>
