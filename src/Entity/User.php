@@ -62,7 +62,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      *      maxMessage = "Votre mot de passe ne peut pas contenir plus de 50 carractères"
      * )
      * @Assert\IdenticalTo(
-     *      propertyPath="plainPassword",
+     *      propertyPath="password",
      *      message="La confirmation saisie ne correspond pas au mot de passe"
      *      )
      */
@@ -71,9 +71,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * @var string The hashed password
      * @ORM\Column(type="string")
-     * @Assert\NotBlank(message="Veuillez saisir une valeur.")
-     * @Assert\NotCompromisedPassword(message="Ce mot de passe a été divulgué lors d'une fuite de donées")
-     * @Assert\Regex(pattern="/^(?=.*[a-zà-Ÿ])(?=.*[A-ZÀ-Ÿ])(?=.*[0-9])(?=.*[â-zà-ÿA-ZÀ-Ý0-9]).{12,}$/", message="Le mot de passe doit être composé de caractères dont au minimum : 1 lettre minuscule, 1 lettre majuscule, et un carectère spéciaux")
      */
     private $password;
 

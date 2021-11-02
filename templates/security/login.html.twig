@@ -23,7 +23,7 @@
             {% if not is_granted('ROLE_USER') %}
             <a href="{{ path('app_register') }}" class="nav-log" style="color:#bb362c">Créer un nouveau compte</a>
             {% endif %}
-            <a href="#" class="nav-log" style="color:#bb362c">Réinitialiser votre mot de passe</a>
+            <a href="{{ path('app_forgot_password_request') }}" class="nav-log" style="color:#bb362c">Réinitialiser votre mot de passe</a>
         </div>
         <div class="col">
             <label for="inputEmail" class="my-3" style="color:#333333">Email*</label>
@@ -54,5 +54,4 @@
 
     
 </form>
-<a href="{{ path('forgot_password') }}" class="d-block text-center text-info text-decoration-none mt-3">Mot de passe oublié ?</a>
 {% endblock %}

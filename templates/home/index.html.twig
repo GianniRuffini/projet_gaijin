@@ -63,16 +63,23 @@
         </div>
     </div>
 
-    <div class="row small-gutters">
-    <div class="col-md-8 col-lg-6 travel d-flex flex-grow-1 mb-3">
-        <a href="/voyage-japon/novembre-que-faire" class="homepage-block-content d-flex flex-grow-1 lazy lazy" data-bgset="/sites/default/files/styles/hp_hori/public/uploads/2017/10/yoshimine-dera-kyoto-17.jpg [(max-width:768px)] | /sites/default/files/styles/hp_hori_lg/public/uploads/2017/10/yoshimine-dera-kyoto-17.jpg">
-            <div class="content font-weight-bold d-flex flex-grow-1 flex-column align-content-center flex-wrap justify-content-center text-white text-center p-2 ie-flex">
-                <h3 class="title-shadow-light fs-18">Que faire en novembre au Japon</h3>
+    <div class="card">
+        <div class="row">
+            <div class="col-4">
+            {% for home in homes %}
+            {% if home.category.id == 1 %}
+            <img src="{{ asset('images/accueil/' ~ home.imageName ) }}" style="width:400px; heigth:400px;" alt="{{ home.titre }}">
+            <div class="d-none d-md-block">
+                <h3 class="title-shadow-dark fs-18" style="color:black">{{ home.titre }}</h3>
                 <span class="separator mb-0"></span>
             </div>
-        </a>
+            {% endif %}
+            {% endfor %}
+        
+            </div>
+        </div>
     </div>
-    <div class="col-md-16 col-lg-18">
+    {# <div class="col-md-16 col-lg-18">
         <div class="row small-gutters flex-nowrap flex-md-wrap position-relative wrap-with-glider" data-slidesToShow="2.25" data-reset="768">
             <div class="mb-3 d-flex flex-grow-1 col-md-8">
                 <a href="/societe-japonaise/vaccination-covid-19-japon" class="homepage-block-content lazy d-flex flex-grow-1" data-bgset="/sites/default/files/styles/hp_hori/public/uploads/2021/03/vaccin-covid-japon.jpg">
@@ -105,9 +112,7 @@
                         <span class="separator mb-0"></span>
                     </div>
                 </a>
-            </div>
-        </div>
-    </div>
+            </div> #}
 
 {# fin #}
 {% endblock %}

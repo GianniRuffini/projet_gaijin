@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ContenusAccueil index{% endblock %}
+
+{% block body %}
+    <h1>ContenusAccueil index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>SousTitre</th>
+                <th>Description</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for contenus_accueil in contenus_accueils %}
+            <tr>
+                <td>{{ contenus_accueil.id }}</td>
+                <td>{{ contenus_accueil.titre }}</td>
+                <td>{{ contenus_accueil.sousTitre }}</td>
+                <td>{{ contenus_accueil.description }}</td>
+                <td>
+                    <a href="{{ path('admin_contenus_accueil_show', {'id': contenus_accueil.id}) }}">show</a>
+                    <a href="{{ path('admin_contenus_accueil_edit', {'id': contenus_accueil.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_contenus_accueil_new') }}">Create new</a>
+{% endblock %}

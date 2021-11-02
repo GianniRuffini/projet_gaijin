@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\HomeRepository;
 use Symfony\Component\HttpFoundation\File\File;
@@ -68,6 +70,16 @@ class Home
      * @ORM\Column(type="datetime_immutable")
      */
     private $updatedAt;
+
+    /**
+     * @ORM\OneToMany(targetEntity=ContenusAccueil::class, mappedBy="home")
+     */
+    private $contenusAccueil;
+
+    public function __construct()
+    {
+        $this->contenusAccueil = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -191,6 +203,36 @@ class Home
     public function setUpdatedAt(\DateTimeImmutable $updatedAt): self
     {
         $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|ContenusAccueil[]
+     */
+    public function getContenusAccueil(): Collection
+    {
+        return $this->contenusAccueil;
+    }
+
+    public function addContenusAccueil(ContenusAccueil $contenusAccueil): self
+    {
+        if (!$this->contenusAccueil->contains($contenusAccueil)) {
+            $this->contenusAccueil[] = $contenusAccueil;
+            $contenusAccueil->setHome($this);
+        }
+
+        return $this;
+    }
+
+    public function removeContenusAccueil(ContenusAccueil $contenusAccueil): self
+    {
+        if ($this->contenusAccueil->removeElement($contenusAccueil)) {
+            // set the owning side to null (unless already changed)
+            if ($contenusAccueil->getHome() === $this) {
+                $contenusAccueil->setHome(null);
+            }
+        }
 
         return $this;
     }
