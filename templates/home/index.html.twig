@@ -68,7 +68,7 @@
             <div class="col-4">
             {% for home in homes %}
             {% if home.category.id == 1 %}
-            <img src="{{ asset('images/accueil/' ~ home.imageName ) }}" style="width:400px; heigth:400px;" alt="{{ home.titre }}">
+            <a href="{{ path('show_contenu' , { 'id' : home.id })}}"><img src="{{ asset('images/accueil/' ~ home.imageName ) }}" style="width:400px; heigth:400px;" alt="{{ home.titre }}"></a>
             <div class="d-none d-md-block">
                 <h3 class="title-shadow-dark fs-18" style="color:black">{{ home.titre }}</h3>
                 <span class="separator mb-0"></span>

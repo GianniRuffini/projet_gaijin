@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+{% endblock %}
+
+{% block body %}
+    {% if contenusAccueil.home.category.id == home.category.id %}
+        <h1>{{ contenusAccueil.titre }}</h1>
+        <h3>{{ contenusAccueil.sousTitre }}</h3>
+        <p>{{ contenusAccueil.description|raw }}</p>
+    {% endif %}
+{% endblock %}

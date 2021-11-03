@@ -1,4 +1,48 @@
-{{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_start(form, {'attr':{'class':'col-12' }}
+) }}
+
+
+<div class="card mt-4 p-4">
+    <div class="card mt-4 p-4">
+        <div class="row mt-4">
+            <div class="col-6">
+                {{ form_label(form.titre) }}
+                {{ form_widget(form.titre) }}
+            </div>
+            <div class="col-6">
+                {{ form_label(form.sousTitre) }}
+                {{ form_widget(form.sousTitre) }}
+            </div>
+            <div class="col-12">
+                {{ form_label(form.description) }}
+                {{ form_widget(form.description) }}
+            </div>
+            <div class="col-5">
+                {{ form_label(form.home) }}
+                {{ form_widget(form.home) }}
+            </div>
+        </div>
+    </div>
+</div>
+
+{# <div class="card p-3 mt-3">
+
+    <button type="button" class="add_item_link" data-collection-holder-class="contenus">
+        Ajouter un contenu     
+                
+    </button>
+
+    <ul class="contenus" data-prototype="{{ form_widget(form.vars.prototype)|e('html_attr') }}" data-index="0">
+        <li class="nav-item">
+            {{ form_row(contenusAccueil.titre) }}
+            {{ form_row(contenusAccueil.sousTitre) }}
+            {{ form_row(contenusAccueil.description) }}
+        </li>
+    </ul> #}
+</div>
+
+<button class="btn">
+    {{ button_label|default('Save') }}
+</button>
 {{ form_end(form) }}
+

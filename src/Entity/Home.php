@@ -8,12 +8,13 @@ use Doctrine\ORM\Mapping as ORM;
 use App\Repository\HomeRepository;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Serializable;
 
 /**
  * @ORM\Entity(repositoryClass=HomeRepository::class)
  * @Vich\Uploadable
  */
-class Home
+class Home implements Serializable
 {
     /**
      * @ORM\Id
@@ -50,14 +51,14 @@ class Home
     /**
      * NOTE: This is not a mapped field of entity metadata, just a simple property.
      * 
-     * @Vich\UploadableField(mapping="accueil", fileNameProperty="imageName", size="imageSize")
+     * @Vich\UploadableField(mapping="accueil", fileNameProperty="imageName")
      * 
      * @var File|null
      */
     private $imageFile;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=255)
      */
     private $imageName;
 
@@ -176,7 +177,7 @@ class Home
         return $this->imageName;
     }
 
-    public function setImageName(string $imageName): self
+    public function setImageName(?string $imageName): self
     {
         $this->imageName = $imageName;
 
@@ -235,6 +236,16 @@ class Home
         }
 
         return $this;
+    }
+
+    public function serialize()
+    {
+        $this->imageFile = base64_encode($this->imageFile);
+    }
+
+    public function unserialize($data)
+    {
+        $this->imageFile = base64_decode($data);
     }
 
 }

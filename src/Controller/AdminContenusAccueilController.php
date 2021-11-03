@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\ContenusAccueil;
 use App\Form\ContenusAccueilType;
 use App\Repository\ContenusAccueilRepository;
+use App\Repository\HomeRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -22,7 +23,7 @@ class AdminContenusAccueilController extends AbstractController
     }
 
     #[Route('/new', name: 'admin_contenus_accueil_new', methods: ['GET','POST'])]
-    public function new(Request $request): Response
+    public function new(Request $request, HomeRepository $homeRepository): Response
     {
         $contenusAccueil = new ContenusAccueil();
         $form = $this->createForm(ContenusAccueilType::class, $contenusAccueil);
@@ -38,6 +39,7 @@ class AdminContenusAccueilController extends AbstractController
 
         return $this->renderForm('admin_contenus_accueil/new.html.twig', [
             'contenus_accueil' => $contenusAccueil,
+            'home' => $homeRepository->findAll(),
             'form' => $form,
         ]);
     }

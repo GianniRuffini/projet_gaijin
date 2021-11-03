@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'base-admin.html.twig' %}
 
 {% block title %}ContenusAccueil{% endblock %}
 
@@ -7,10 +7,6 @@
 
     <table class="table">
         <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ contenus_accueil.id }}</td>
-            </tr>
             <tr>
                 <th>Titre</th>
                 <td>{{ contenus_accueil.titre }}</td>
@@ -22,6 +18,10 @@
             <tr>
                 <th>Description</th>
                 <td>{{ contenus_accueil.description }}</td>
+            </tr>
+            <tr>
+                <th>Page choisie</th>
+                <td>{{ contenus_accueil.home.titre }}</td>
             </tr>
         </tbody>
     </table>

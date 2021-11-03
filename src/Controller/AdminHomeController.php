@@ -51,14 +51,15 @@ class AdminHomeController extends AbstractController
     }
 
     #[Route('/{id}/edit', name: 'admin_home_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, Home $home): Response
+    public function edit(Request $request, Home $home ): Response
     {
         $form = $this->createForm(HomeType::class, $home);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            // dd($form);
             $this->getDoctrine()->getManager()->flush();
-
+            
             return $this->redirectToRoute('admin_home_index', [], Response::HTTP_SEE_OTHER);
         }
 

@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'base-admin.html.twig' %}
 
 {% block title %}New ContenusAccueil{% endblock %}
 
@@ -8,4 +8,48 @@
     {{ include('admin_contenus_accueil/_form.html.twig') }}
 
     <a href="{{ path('admin_contenus_accueil_index') }}">back to list</a>
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+
+        window.onload = function(){
+        let btn = document.querySelector('.add_item_link');
+        console.log(btn);
+        btn.addEventListener("click", (e)=> addFormToCollection(e));
+        const addPartFormDeleteLink = (item)=>{
+        const removeFormButton = document.createElement('button')
+        removeFormButton.innerText = 'Supprimer ce contenus'
+        item.append(removeFormButton);
+        removeFormButton.addEventListener('click', (e) => {
+            e.preventDefault()
+            item.remove();
+        });
+        }
+        const addFormToCollection = (e) =>{
+            console.log("addFormToCollection=>",e);
+                const collectionHolder = document.querySelector('.' + e.currentTarget.dataset.collectionHolderClass);
+                const item = document.createElement('li');
+                item.innerHTML = collectionHolder
+                .dataset
+                .prototype
+                .replace(
+                    /__name__/g,
+                    collectionHolder.dataset.index
+                );
+                collectionHolder.appendChild(item);
+                collectionHolder.dataset.index++;
+                addPartFormDeleteLink(item);
+            };
+            const contenus = document.querySelector('ul.contenus').querySelectorAll('li');
+            contenus.forEach((part)=> {
+                addPartFormDeleteLink(part)
+            });
+        };
+
+
+        
+
+    </script>
+
 {% endblock %}
