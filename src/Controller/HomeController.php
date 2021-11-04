@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Repository\ContenusAccueilRepository;
 use App\Repository\ContenusRepository;
 use App\Repository\HomeRepository;
 use App\Repository\VideoRepository;
@@ -20,4 +21,6 @@ class HomeController extends AbstractController
             'homes' => $homeRepository->findAll()
         ]);
     }
+    
+    
 }

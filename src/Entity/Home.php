@@ -2,13 +2,13 @@
 
 namespace App\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
+use Serializable;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\HomeRepository;
+use Doctrine\Common\Collections\Collection;
 use Symfony\Component\HttpFoundation\File\File;
+use Doctrine\Common\Collections\ArrayCollection;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
-use Serializable;
 
 /**
  * @ORM\Entity(repositoryClass=HomeRepository::class)
@@ -73,14 +73,9 @@ class Home implements Serializable
     private $updatedAt;
 
     /**
-     * @ORM\OneToMany(targetEntity=ContenusAccueil::class, mappedBy="home")
+     * @ORM\OneToOne(targetEntity=ContenusAccueil::class, inversedBy="home", cascade={"persist", "remove"})
      */
     private $contenusAccueil;
-
-    public function __construct()
-    {
-        $this->contenusAccueil = new ArrayCollection();
-    }
 
     public function getId(): ?int
     {
@@ -208,36 +203,6 @@ class Home implements Serializable
         return $this;
     }
 
-    /**
-     * @return Collection|ContenusAccueil[]
-     */
-    public function getContenusAccueil(): Collection
-    {
-        return $this->contenusAccueil;
-    }
-
-    public function addContenusAccueil(ContenusAccueil $contenusAccueil): self
-    {
-        if (!$this->contenusAccueil->contains($contenusAccueil)) {
-            $this->contenusAccueil[] = $contenusAccueil;
-            $contenusAccueil->setHome($this);
-        }
-
-        return $this;
-    }
-
-    public function removeContenusAccueil(ContenusAccueil $contenusAccueil): self
-    {
-        if ($this->contenusAccueil->removeElement($contenusAccueil)) {
-            // set the owning side to null (unless already changed)
-            if ($contenusAccueil->getHome() === $this) {
-                $contenusAccueil->setHome(null);
-            }
-        }
-
-        return $this;
-    }
-
     public function serialize()
     {
         $this->imageFile = base64_encode($this->imageFile);
@@ -247,5 +212,18 @@ class Home implements Serializable
     {
         $this->imageFile = base64_decode($data);
     }
+
+    public function getContenusAccueil(): ?ContenusAccueil
+    {
+        return $this->contenusAccueil;
+    }
+
+    public function setContenusAccueil(?ContenusAccueil $contenusAccueil): self
+    {
+        $this->contenusAccueil = $contenusAccueil;
+
+        return $this;
+    }
+
 
 }

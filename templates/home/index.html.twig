@@ -61,58 +61,55 @@
             <h2>À VOIR EN CE MOMENT AU JAPON</h2>
             <div class="separator"></div>
         </div>
-    </div>
-
-    <div class="card">
-        <div class="row">
-            <div class="col-4">
+        
+        <div class="row ">
+            <div class="col col-4">
             {% for home in homes %}
             {% if home.category.id == 1 %}
-            <a href="{{ path('show_contenu' , { 'id' : home.id })}}"><img src="{{ asset('images/accueil/' ~ home.imageName ) }}" style="width:400px; heigth:400px;" alt="{{ home.titre }}"></a>
-            <div class="d-none d-md-block">
-                <h3 class="title-shadow-dark fs-18" style="color:black">{{ home.titre }}</h3>
-                <span class="separator mb-0"></span>
-            </div>
+                <a href="{{ path('show_contenu' , { 'id' : home.id })}}"><img src="{{ asset('images/accueil/' ~ home.imageName ) }}" class="homepage-block-content lazy d-flex flex-grow-1" style="width:400px; heigth:400px;" alt="{{ home.titre }}">
+                    <div class="content font-weight-bold d-flex flex-grow-1 flex-column align-content-center flex-wrap justify-content-center text-white text-center p-2 ie-flex">
+                        <h3 class="title-shadow-light fs-18" style="color:black">{{ home.titre }}</h3>
+                        <span class="separator mb-0"></span>
+                    </div>
+                </a>
             {% endif %}
             {% endfor %}
-        
             </div>
         </div>
     </div>
-    {# <div class="col-md-16 col-lg-18">
-        <div class="row small-gutters flex-nowrap flex-md-wrap position-relative wrap-with-glider" data-slidesToShow="2.25" data-reset="768">
-            <div class="mb-3 d-flex flex-grow-1 col-md-8">
-                <a href="/societe-japonaise/vaccination-covid-19-japon" class="homepage-block-content lazy d-flex flex-grow-1" data-bgset="/sites/default/files/styles/hp_hori/public/uploads/2021/03/vaccin-covid-japon.jpg">
-                    <div class="content font-weight-bold d-flex flex-grow-1 flex-column align-content-center flex-wrap justify-content-center text-white text-center p-2 ie-flex">
-                        <h3 class="title-shadow-light fs-18">La vaccination Covid-19 au Japon</h3>
-                        <span class="separator mb-0"></span>
-                    </div>
-                </a>
-            </div>
-            <div class="mb-3 d-flex flex-grow-1 col-md-8">
-                <a href="/automne-japon" class="homepage-block-content lazy d-flex flex-grow-1" data-bgset="/sites/default/files/styles/hp_hori/public/kawaguchiko-momiji-fuji-24.jpg">
-                    <div class="content font-weight-bold d-flex flex-grow-1 flex-column align-content-center flex-wrap justify-content-center text-white text-center p-2 ie-flex">
-                        <h3 class="title-shadow-light fs-18">Automne au Japon</h3>
-                        <span class="separator mb-0"></span>
-                    </div>
-                </a>
-            </div>
-            <div class="mb-3 d-flex flex-grow-1 col-md-8">
-                <a href="/voyage-japon/covid-19-coronavirus-quand-comment-2020-2021" class="homepage-block-content lazy d-flex flex-grow-1" data-bgset="/sites/default/files/styles/hp_hori/public/uploads/2020/04/tokyo-2020-asakusa-1.jpg">
-                    <div class="content font-weight-bold d-flex flex-grow-1 flex-column align-content-center flex-wrap justify-content-center text-white text-center p-2 ie-flex">
-                        <h3 class="title-shadow-light fs-18">Covid-19 : quand et comment voyager au Japon face au Coronavirus en 2021 et 2022</h3>
-                        <span class="separator mb-0"></span>
-                    </div>
-                </a>
-            </div>
-            <div class="mb-3 d-flex flex-grow-1 col-md-8">
-                <a href="/voyage-japon/empeche-reouverture-frontieres-japonaises-fin-2021" class="homepage-block-content lazy d-flex flex-grow-1" data-bgset="/sites/default/files/styles/hp_hori/public/uploads/2021/09/fermeture-frontieres-japon-2021.jpg">
-                    <div class="content font-weight-bold d-flex flex-grow-1 flex-column align-content-center flex-wrap justify-content-center text-white text-center p-2 ie-flex">
-                        <h3 class="title-shadow-light fs-18">Ce qui empêche la réouverture des frontières japonaises avant la fin 2021</h3>
-                        <span class="separator mb-0"></span>
-                    </div>
-                </a>
-            </div> #}
 
+    <div class="container" style="background:#f5f5ef">
+        <div class="text-center my-5">
+            <img src="{{ asset('images/photoLocal/logoTitre/calendrier.png')}}" style="width: 70px; heigth: 70px;" alt="logo-tong">
+            <h2>ORGANISER VOTRE VOYAGE AU JAPON</h2>
+            <h3 style="color=#8a8a76">À savoir avant de partir</h3>
+            <div class="separator"></div>
+        </div>
+
+        <div class="row my-3">
+            <div class="col col-4">
+            {% for home in homes %}
+            {% if home.category.id == 2 %}
+                <a href="{{ path('show_contenu' , { 'id' : home.id })}}"><img src="{{ asset('images/accueil/' ~ home.imageName ) }}" class="homepage-block-content lazy d-flex flex-grow-1" style="width:400px; heigth:400px;" alt="{{ home.titre }}">
+                    <div class="content font-weight-bold d-flex flex-grow-1 flex-column align-content-center flex-wrap justify-content-center text-white text-center p-2 ie-flex">
+                        <h3 class="title-shadow-light fs-18" style="color:black">{{ home.titre }}</h3>
+                        <span class="separator mb-0"></span>
+                    </div>
+                </a>
+            {% endif %}
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="text-center my-5">
+            <h4 style="color=#8a8a76">Bien choisir ses destinations</h4>
+            <h2>QUE VISITER AU JAPON</h2>
+            <div class="separator"></div>
+        </div>
+    </div>
+        
+    
 {# fin #}
 {% endblock %}

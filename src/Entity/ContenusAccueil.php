@@ -33,7 +33,7 @@ class ContenusAccueil
     private $description;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Home::class, inversedBy="contenusAccueil")
+     * @ORM\OneToOne(targetEntity=Home::class, mappedBy="contenusAccueil", cascade={"persist", "remove"})
      */
     private $home;
 
@@ -85,8 +85,21 @@ class ContenusAccueil
 
     public function setHome(?Home $home): self
     {
+        // unset the owning side of the relation if necessary
+        if ($home === null && $this->home !== null) {
+            $this->home->setContenusAccueil(null);
+        }
+
+        // set the owning side of the relation if necessary
+        if ($home !== null && $home->getContenusAccueil() !== $this) {
+            $home->setContenusAccueil($this);
+        }
+
         $this->home = $home;
 
         return $this;
     }
+
+    
+
 }
