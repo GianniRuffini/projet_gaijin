@@ -4,9 +4,10 @@ namespace App\Form;
 
 use App\Entity\Category;
 use App\Entity\Contenus;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class ContenusType extends AbstractType
@@ -16,7 +17,7 @@ class ContenusType extends AbstractType
         $builder
             ->add('titre')
             ->add('sousTitre')
-            ->add('description')
+            ->add('description', CKEditorType::class)
             ->add('category', EntityType::class, [
                 'class' => Category::class,
                 'choice_label' => 'titre',

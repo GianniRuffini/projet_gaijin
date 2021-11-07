@@ -47,7 +47,7 @@
                     {{ render(controller('App\\Controller\\CategoryController::categoryMenu')) }}
                     {% if is_granted('ROLE_USER') %}
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="{{ path('communaute') }}" role="button" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">
                             COMMUNAUTE
                         </a>
                             <div class="dropdown-menu">
