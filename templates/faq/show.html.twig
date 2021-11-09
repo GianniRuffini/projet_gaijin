@@ -26,9 +26,31 @@
             </div>
 
             <div class="container">
-            <h2> Les N réponses à la quéstion posée</h2>
-
-
-            <h3> Ajouter un commentaire</h3>
+                <div class="grix xs2 sm3 gutter-0 card">
+                    <h2> Les N réponses à la quéstion posée</h2>
+                    {% for commentaire in faq.commentaires %}
+                        <p>Publié par {{commentaire.email}} le {{commentaire.createdAt|date("d/m/Y H:i")}}</p>
+                        <div>{{commentaire.contenuscommentaire|raw}}</div>
+                            <p><a href="#ajout-commentaire" data-reply data-id="{{commentaire.id}}" class="btn btn-secondary press">Répondre</a></p>
+                    {% endfor %}
+                </div>
+                <div class="col-xs2 col-sm3" id="ajout-commentaire">
+                    <h3> Ajouter une réponse</h3>
+                    {{ form(form) }}
+                </div>
             </div>
+{% endblock %}
+
+{% block javascript %}
+    <script>
+        window.onload = () => {
+            // on met un écouteur d'événements sur tout les bouttons répondres
+            document.querySelectorAll("[data-reply]").forEach(element => {
+                element.addEventListener("click", function(){
+                    document.querySelector("#commentaires_parent").value = this.dataset.id;
+                });
+            });
+        }
+    </script>
+
 {% endblock %}

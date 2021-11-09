@@ -4,14 +4,18 @@ namespace App\Controller;
 
 use App\Entity\Faq;
 use App\Form\FaqType;
-use App\Repository\CategoryFaqRepository;
-use App\Repository\CategoryRepository;
+use App\Entity\Commentaires;
+use App\Form\CommentairesType;
 use App\Repository\FaqRepository;
+use App\Repository\CategoryRepository;
 use Doctrine\Persistence\ObjectManager;
+use App\Repository\CategoryFaqRepository;
+use DateTimeImmutable;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class FaqController extends AbstractController
 {
@@ -62,10 +66,49 @@ class FaqController extends AbstractController
     }
 
     #[Route('/faq/{id}', name: 'faq_show')]
-    public function showFaq(FaqRepository $faqRepository, int $id): Response
+    public function showFaq(FaqRepository $faqRepository, Request $request ,int $id): Response
     {
+        $faq = $faqRepository->findOneBy(['id' => $id]);
+
+        if (!$faq) {
+            throw new NotFoundHttpException('Pas de question trouvée');
+        }
+
+        //Partie commentaire
+        //on crée le commantaire "vierge"
+        $commentaire = new Commentaires;
+
+        //on génère le formulaire
+        $form = $this->createForm(CommentairesType::class, $commentaire);
+
+        $form->handleRequest($request);
+
+        //traitement du formulaire
+        if($form->isSubmitted() && $form->isValid()){
+            $commentaire->setCreatedAt(new DateTimeImmutable());
+            $commentaire->setAnnonces($faq);
+
+            //on récupère le contenu du champ parent
+            $parentid = $form->get("parent")->getData();
+
+            //on va chercher le commentaire correspondant
+            $em= $this->getDoctrine()->getManager();
+
+            $parent = $em->getRepository(Commentaires::class)->find($parentid);
+
+            //on definit le parent
+            $commentaire->setParent($parent);
+
+            $em->persist($commentaire);
+            $em->flush();
+
+            $this->addFlash('message', 'Votre commentaire à bien été envoyé');
+            return $this->redirectToRoute('faq_show', ['id'=>$faq->getId()]);
+        }
+
         return $this->render('faq/show.html.twig', [
-            'faq' => $faqRepository->find($id)
+            'faq' => $faqRepository->find($id),
+            'form'=> $form->createView()
         ]);
     }
     
