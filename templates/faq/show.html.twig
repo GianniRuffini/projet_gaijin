@@ -18,7 +18,7 @@
                     {{ faq.titre }}
                 </h1>
 
-                <h4> N réponse</h4>
+                <h4> {{faq.commentaires|length}} réponse</h4>
 
                 <p>
                     {{ faq.question }}
@@ -27,15 +27,27 @@
 
             <div class="container">
                 <div class="grix xs2 sm3 gutter-0 card">
-                    <h2> Les N réponses à la quéstion posée</h2>
+                    <h2> Les {{ faq.commentaires|length}} réponses à la quéstion posée</h2>
                     {% for commentaire in faq.commentaires %}
-                        <p>Publié par {{commentaire.email}} le {{commentaire.createdAt|date("d/m/Y H:i")}}</p>
-                        <div>{{commentaire.contenuscommentaire|raw}}</div>
+                        {% if commentaire.parent == null  %}
+                            <h3>Question de {{commentaire.user.pseudo}}</h3>
+                            <p>Publié par {{commentaire.user.pseudo}} le {{commentaire.createdAt|date("d/m/Y H:i")}}</p>
+                            <div>{{commentaire.contenuscommentaire|raw}}</div>
                             <p><a href="#ajout-commentaire" data-reply data-id="{{commentaire.id}}" class="btn btn-secondary press">Répondre</a></p>
+                            
+                            {# on affiche les reponses #}
+                            {% for reply in commentaire.reponse %}
+                                <p>Réponse publiée par {{reply.user.pseudo}} le {{reply.createdAt|date("d/m/Y H:i")}}</p>
+                                <div>{{reply.contenuscommentaire|raw}}</div>
+                            {% endfor %}
+                        {% endif %}
                     {% endfor %}
                 </div>
                 <div class="col-xs2 col-sm3" id="ajout-commentaire">
                     <h3> Ajouter une réponse</h3>
+                    <div>
+                        <p>pseuod : {{ app.user.pseudo}}</p>
+                    </div>
                     {{ form(form) }}
                 </div>
             </div>

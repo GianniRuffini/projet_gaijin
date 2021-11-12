@@ -22,7 +22,9 @@ class UserProfileType extends AbstractType
             ->add('pseudo')
             ->add('plainPassword', PasswordType::class, ["label"=>"Changer le mot de passe", "required"=>false])
             ->add('confirmPassword', PasswordType::class,["label"=>"Confirmer mot de passe", "required"=>false])
-            ->add('country', CountryType::class)
+            ->add('country', CountryType:: class, array(
+            "preferred_choices" => ['FR']
+            ))
             ->remove('roles')
             ->remove('password')
             ->remove('isVerified')

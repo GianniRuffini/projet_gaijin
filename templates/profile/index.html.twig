@@ -15,25 +15,25 @@
 
 
 {# TabPanel #}
-<div class="card p-3 mt-3 mb-3">
+<div class="container card p-3 mt-3 mb-3">
     <ul class="nav nav-tabs my-5" id="myTab" role="tablist">
-    <div class="deco">
-        {% if is_granted('ROLE_USER') %}
-        <a class="btn btn-secondary" href="{{ path('app_logout') }}">
-            Déconnexion
-        </a>
-        {% endif %}
-    </div>
-        <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#info" type="button" role="tab" aria-controls="home" aria-selected="true">
-                Mes informations
-            </button>
-        </li>
-        <li class="nav-item" role="presentation">
-            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#liste" type="button" role="tab" aria-controls="profile" aria-selected="false">
-                Ma liste de lecture
-            </button>
-        </li>
+        <div class="deco">
+            {% if is_granted('ROLE_USER') %}
+            <a class="btn btn-secondary" href="{{ path('app_logout') }}">
+                Déconnexion
+            </a>
+            {% endif %}
+        </div>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#info" type="button" role="tab" aria-controls="home" aria-selected="true">
+                    Mes informations
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#liste" type="button" role="tab" aria-controls="profile" aria-selected="false">
+                    Ma liste de voyage
+                </button>
+            </li>
     </ul>
     <div class="tab-content form-profile" id="myTabContent">
         <div class="tab-pane fade show active" id="info" role="tabpanel" aria-labelledby="home-tab">
@@ -42,7 +42,9 @@
                 <button class="btn btn-success mt-3" type="submit">Modifier</button>
             {{ form_end(form) }}
         </div>
-        <div class="tab-pane fade" id="liste" role="tabpanel" aria-labelledby="profile-tab">
+        <div class="container tab-pane fade" id="liste" role="tabpanel" aria-labelledby="profile-tab">
+            <div id="maCarte">
+            </div>
         </div>
     </div>
 </div>
@@ -61,6 +63,8 @@
             $(".alert").fadeOut(500, function(){ $(".alert").remove() });
         }, 2000);
     }
+
+    
 </script>
 {% endblock %}
 

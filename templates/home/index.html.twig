@@ -62,12 +62,12 @@
             <div class="separator"></div>
         </div>
         
-            <div class="row">
-                <div class="col-4">
+            <div class="grid">
+                <div class="g-col-4">
                 {% for home in homes %}
                 {% if home.category.id == 1 %}
                     <a href="{{ path('show_contenu' , { 'id' : home.id })}}"><img src="{{ asset('images/accueil/' ~ home.imageName ) }}" style="max-width:100%"  alt="{{ home.titre }}">
-                        <div class="content font-weight-bold d-flex flex-grow-1 flex-column align-content-center flex-wrap justify-content-center text-white text-center p-2 ie-flex">
+                        <div class="content font-weight-bold d-flex flex-grow-1 flex-column flex-wrap text-white text-center p-2 ie-flex">
                             <h3 class="title-shadow-light fs-18" style="color:black">{{ home.titre }}</h3>
                             <span class="separator mb-0"></span>
                         </div>
@@ -86,8 +86,8 @@
             <div class="separator"></div>
         </div>
 
-        <div class="row my-3">
-            <div class="col col-4">
+        <div class="grid">
+            <div class="g-col-4">
             {% for home in homes %}
             {% if home.category.id == 2 %}
                 <a href="{{ path('show_contenu' , { 'id' : home.id })}}"><img src="{{ asset('images/accueil/' ~ home.imageName ) }}" class="homepage-block-content lazy d-flex flex-grow-1" style="width:400px; heigth:400px;" alt="{{ home.titre }}">

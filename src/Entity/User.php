@@ -104,9 +104,15 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $faqUser;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Commentaires::class, mappedBy="authentification")
+     */
+    private $commentaires;
+
     public function __construct()
     {
         $this->faqUser = new ArrayCollection();
+        $this->commentaires = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -342,6 +348,36 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
             // set the owning side to null (unless already changed)
             if ($faqUser->getFaqUser() === $this) {
                 $faqUser->setFaqUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Commentaires[]
+     */
+    public function getCommentaires(): Collection
+    {
+        return $this->commentaires;
+    }
+
+    public function addCommentaire(Commentaires $commentaire): self
+    {
+        if (!$this->commentaires->contains($commentaire)) {
+            $this->commentaires[] = $commentaire;
+            $commentaire->setAuthentification($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCommentaire(Commentaires $commentaire): self
+    {
+        if ($this->commentaires->removeElement($commentaire)) {
+            // set the owning side to null (unless already changed)
+            if ($commentaire->getAuthentification() === $this) {
+                $commentaire->setAuthentification(null);
             }
         }
 

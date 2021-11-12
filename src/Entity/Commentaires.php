@@ -37,7 +37,7 @@ class Commentaires
     /**
      * @ORM\Column(type="boolean")
      */
-    private $rgpd;
+    private $rgpd = null;
 
     /**
      * @ORM\ManyToOne(targetEntity=Faq::class, inversedBy="commentaires")
@@ -56,9 +56,9 @@ class Commentaires
     private $reponse;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="commentaires")
      */
-    private $email;
+    private $user;
 
     public function __construct()
     {
@@ -172,14 +172,14 @@ class Commentaires
         return $this;
     }
 
-    public function getEmail(): ?string
+    public function getUser(): ?User
     {
-        return $this->email;
+        return $this->user;
     }
 
-    public function setEmail(string $email): self
+    public function setUser(?User $user): self
     {
-        $this->email = $email;
+        $this->user = $user;
 
         return $this;
     }
