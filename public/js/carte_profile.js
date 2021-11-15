@@ -1,3 +1,4 @@
+
     const mapboxToken = 'pk.eyJ1Ijoia2lyYWR1MTMiLCJhIjoiY2t2djdqZDF5MDBkYTJ2bjQxOHI1eHNhcCJ9.1Gy1cLL4PsURPsQFUeNSaw';
     const zones = [
         { distance: 10, color: "#00b798"},
@@ -45,7 +46,6 @@
         zoomOffset: -1,
         accessToken: mapboxToken,
         }).addTo(carte);
-
         carte.on("click", (e) => {
             if (!marker) {
                 addMarker(e.latlng);
@@ -72,7 +72,17 @@
                     removeMarker();
                     break;
             }
+
         });
     }
 
-    initmap();
+    initmap()
+
+
+    // $("#profile-tab").on('click', function(){
+    //     $("#maCarte").load(" #maCarte", function(){
+            
+    //     });
+    //     console.log('coucou');
+    // });
+

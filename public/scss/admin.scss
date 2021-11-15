@@ -1,5 +1,6 @@
 @import "_navbar.scss";
 @import "_navbar_admin.scss";
+@import "_pageAccueil.scss";
 @import "_carteProfile.scss";
 @import "_map.scss";
 @import "_general.scss";
@@ -12,4 +13,6 @@ body{
         width: 40px;
         height: 40px;
     }
+
+    
 }
