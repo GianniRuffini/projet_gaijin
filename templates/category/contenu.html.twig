@@ -169,8 +169,27 @@
         <div class="separator"></div>
         <p class="my-5">
             {{ contenu.description|raw }}
+            {# {% if app.user and contenus not in app.user.booklist %}
+                <button data-contenusid="{{ contenus.id }}" class="btn btn-sm btn-warning absolute text-white bt-favori"><i class="fa fa-star" aria-hidden="true"></i></button>
+            {% endif %} #}
         </p>
     </div>
+
+    <div class="text-center">
+        {% for prefecture in contenu.prefectures %}
+        {% if prefecture.region.id == contenu.id %}
+            <h1>{{prefecture.titre}}</h1>
+            <p>{{prefecture.description|raw}}</p>
+        {% endif %}
+        {% endfor %}
+        
+    </div>
 </div>
+
+
     
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset("js/contenus_favoris.js") }}"></script>
 {% endblock %}

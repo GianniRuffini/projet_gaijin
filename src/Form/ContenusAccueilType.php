@@ -9,6 +9,7 @@ use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 
 class ContenusAccueilType extends AbstractType
@@ -19,6 +20,7 @@ class ContenusAccueilType extends AbstractType
             ->add('titre')
             ->add('sousTitre')
             ->add('description', CKEditorType::class)
+            ->add('imageFile', FileType::class, ["required" => false])
             ->add('home', EntityType::class, [
                 'label' => 'Page à éditer',
                 'class' => Home::class,

@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ContenusRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -36,6 +38,16 @@ class Contenus
      * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="type")
      */
     private $category;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Prefecture::class, mappedBy="region")
+     */
+    private $prefectures;
+
+    public function __construct()
+    {
+        $this->prefectures = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -86,6 +98,36 @@ class Contenus
     public function setCategory(?Category $category): self
     {
         $this->category = $category;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Prefecture[]
+     */
+    public function getPrefectures(): Collection
+    {
+        return $this->prefectures;
+    }
+
+    public function addPrefecture(Prefecture $prefecture): self
+    {
+        if (!$this->prefectures->contains($prefecture)) {
+            $this->prefectures[] = $prefecture;
+            $prefecture->setRegion($this);
+        }
+
+        return $this;
+    }
+
+    public function removePrefecture(Prefecture $prefecture): self
+    {
+        if ($this->prefectures->removeElement($prefecture)) {
+            // set the owning side to null (unless already changed)
+            if ($prefecture->getRegion() === $this) {
+                $prefecture->setRegion(null);
+            }
+        }
 
         return $this;
     }

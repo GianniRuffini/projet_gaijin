@@ -1,0 +1,11 @@
+{% extends 'base-admin.html.twig' %}
+
+{% block title %}New Prefecture{% endblock %}
+
+{% block body %}
+    <h1>Create new Prefecture</h1>
+
+    {{ include('admin_prefecture/_form.html.twig') }}
+
+    <a href="{{ path('admin_prefecture_index') }}">back to list</a>
+{% endblock %}

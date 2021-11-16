@@ -11,6 +11,7 @@
                 <th>Titre</th>
                 <th>SousTitre</th>
                 <th>Description</th>
+                <th>ImageName</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -20,6 +21,7 @@
                 <td>{{ contenus_accueil.titre }}</td>
                 <td>{{ contenus_accueil.sousTitre }}</td>
                 <td>{{ contenus_accueil.description }}</td>
+                <td><img src="{{ asset('images/accueil/' ~ contenus_accueil.imageName ) }}" alt="{{ contenus_accueil.titre }}" class="img-list-admin"></td>
                 <td>
                     <a href="{{ path('admin_contenus_accueil_show', {'id': contenus_accueil.id}) }}">show</a>
                     <a href="{{ path('admin_contenus_accueil_edit', {'id': contenus_accueil.id}) }}">edit</a>

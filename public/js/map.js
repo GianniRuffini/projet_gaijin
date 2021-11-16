@@ -10,7 +10,7 @@ $(document).ready(function(){
         mouseY = e.pageY+20
         $('.info-bulle').css('top',mouseY+'px')
         $('.info-bulle').css('left',mouseX+'px')
-        // console.log($('.info-bulle').css('top'));
+        //console.log($('.info-bulle').css('top'));
     })
 
     $('.region-1').hover(function(e){
