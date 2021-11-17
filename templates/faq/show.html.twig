@@ -18,15 +18,15 @@
                     {{ faq.titre }}
                 </h1>
 
-                <h4> {{faq.commentaires|length}} réponse</h4>
+                <p style="font-size:10px"> {{faq.commentaires|length}} réponse</p>
 
                 <p>
                     {{ faq.question }}
                 </p>
             </div>
-
+            <div style="height:100px"></div>
             <div class="container">
-                <div class="grix xs2 sm3 gutter-0 card">
+                <div class="grix xs2 sm3 gutter-0">
                     <h2> Les {{ faq.commentaires|length}} réponses à la quéstion posée</h2>
                     {% for commentaire in faq.commentaires %}
                         {% if commentaire.parent == null  %}
@@ -43,6 +43,7 @@
                         {% endif %}
                     {% endfor %}
                 </div>
+                <div style="height:100px"></div>
                 <div class="col-xs2 col-sm3" id="ajout-commentaire">
                     <h3> Ajouter une réponse</h3>
                     <div>

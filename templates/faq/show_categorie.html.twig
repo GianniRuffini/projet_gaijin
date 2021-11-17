@@ -20,10 +20,19 @@
         
     
         {% if categorie.id == faqs.categorie.id %}
-        <div class="card">
-            {{ faqs.titre }}
-            {{ faqs.question }}
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-4 mb-4">
+                <div class="card">
+                    <div class="card-title">
+                        <h2>{{ faqs.titre }}</h2>
+                    </div>
+                    <div class="card-body">
+                        {{ faqs.question }}
+                    </div>
+                </div>
+            </div>
         </div>
+        <div style="height:100px"></div>
         {% endif %}
 {% endfor %}
 

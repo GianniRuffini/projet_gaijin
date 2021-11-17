@@ -7,16 +7,19 @@
 {# {% if home.category.id == 1 %} #}
     <div class="img1">
         <img src="{{ asset('images/accueil/' ~ home.contenusAccueil.imageName ) }}" alt="{{ home.contenusAccueil.titre }}">
-    </div>    
-    <h1>
-        {{ home.contenusAccueil.titre }}
-    </h1>
-    <h3>
-        {{ home.contenusAccueil.sousTitre }}
-    </h3>
-    <p>
-        {{ home.contenusAccueil.description|raw }}
-    </p>
+    </div> 
+    <div class="container">
+        <h1 class="text-center">
+            {{ home.contenusAccueil.titre }}
+        </h1>
+        <h3 class="text-center" style="color:#8a8a76">
+            {{ home.contenusAccueil.sousTitre }}
+        </h3>
+        <div class="separator"></div>
+        <p>
+            {{ home.contenusAccueil.description|raw }}
+        </p>
+    </div>
 
 {# {% endif %} #}
 
