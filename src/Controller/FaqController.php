@@ -59,7 +59,9 @@ class FaqController extends AbstractController
             $entityManager->persist($faq);
             $entityManager->flush();
             
+            $this->addFlash('success', 'Votre question à bien été envoyé');
             return $this->redirectToRoute('faq', [], Response::HTTP_SEE_OTHER);
+
         }
 
         return $this->render('faq/new.html.twig', [
@@ -80,6 +82,7 @@ class FaqController extends AbstractController
         //on crée le commantaire "vierge"
         $commentaire = new Commentaires;
 
+        //on recupère le User
         $user = $this->getUser();
 
         //on génère le formulaire

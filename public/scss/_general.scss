@@ -15,7 +15,7 @@ p{
 // position deconexion dans profile
 .deco{
     position: absolute;
-    right: 20px;
+    right: 300px;
 }
 
 // agrandissement du body (provisoire en attente de contenue 
@@ -30,7 +30,9 @@ p{
 }
 
 // taille de l'image du footer
-footer img.logo{
+footer img.logo-footer{
     width: 70px;
     height: 90px;
+    display: flex;
+    margin: auto;
 }

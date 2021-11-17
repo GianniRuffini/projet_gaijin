@@ -4,15 +4,18 @@
 {% block title %}{% endblock %}
 
 {% block body %}
-    <h1>Home index</h1>
+    <h1 class="mb-3">Liste du contenue de l'accueil</h1>
+
+        <a class="btn-sm btn-success" href="{{ path('admin_home_new') }}">Nouveau</a>
+
 
     <table class="table" data-sorting="true" data-filtering="true" data-paging="true" data-paging-size="3">
         <thead>
             <tr>
                 <th>Titre</th>
-                <th>SousTitre</th>
+                <th>Sous Titre</th>
                 <th>Description</th>
-                <th>ImageName</th>
+                <th>Image</th>
                 <th>Categories</th>
                 <th>actions</th>
             </tr>
@@ -26,8 +29,8 @@
                 <td><img src="{{ asset('images/accueil/' ~ home.imageName ) }}" alt="{{ home.titre }}" class="img-list-admin"></td>
                 <td>{{ home.category }}</td>
                 <td>
-                    <a href="{{ path('admin_home_show', {'id': home.id}) }}">show</a>
-                    <a href="{{ path('admin_home_edit', {'id': home.id}) }}">edit</a>
+                    <a class="btn-sm btn-secondary" style="color: #ECECEC" href="{{ path('admin_home_show', {'id': home.id}) }}"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                    <a class="btn-sm btn-secondary ms-3" style="color: #ECECEC" href="{{ path('admin_home_edit', {'id': home.id}) }}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
                 </td>
             </tr>
         {% else %}
@@ -38,5 +41,4 @@
         </tbody>
     </table>
 
-    <a href="{{ path('admin_home_new') }}">Create new</a>
 {% endblock %}

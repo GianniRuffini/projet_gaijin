@@ -1,9 +1,12 @@
 {% extends 'base-admin.html.twig' %}
 
-{% block title %}CategoryHome index{% endblock %}
+{% block title %}liste des categories{% endblock %}
 
 {% block body %}
-    <h1>CategoryHome index</h1>
+    <h1 class="mb-3">Liste des catégories de l'accueil</h1>
+
+    <a class="btn-sm btn-success" href="{{ path('admin_category_home_new') }}">Nouveau</a>
+
 
     <table class="table" data-sorting="true" data-filtering="true" data-paging="true" data-paging-size="3">
         <thead>
@@ -19,8 +22,8 @@
                 <td>{{ category_home.id }}</td>
                 <td>{{ category_home.titre }}</td>
                 <td>
-                    <a href="{{ path('admin_category_home_show', {'id': category_home.id}) }}">show</a>
-                    <a href="{{ path('admin_category_home_edit', {'id': category_home.id}) }}">edit</a>
+                    <a class="btn-sm btn-secondary" style="color: #ECECEC" href="{{ path('admin_category_home_show', {'id': category_home.id}) }}"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                    <a class="btn-sm btn-secondary" style="color: #ECECEC" href="{{ path('admin_category_home_edit', {'id': category_home.id}) }}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
                 </td>
             </tr>
         {% else %}
@@ -31,5 +34,4 @@
         </tbody>
     </table>
 
-    <a href="{{ path('admin_category_home_new') }}">Create new</a>
 {% endblock %}

@@ -1,17 +1,19 @@
 {% extends 'base-admin.html.twig' %}
 
-{% block title %}ContenusAccueil index{% endblock %}
+{% block title %}liste contenus de l'accueil{% endblock %}
 
 {% block body %}
-    <h1>ContenusAccueil index</h1>
+
+<h1 class=" mb-3">Liste des contenus de l'accueil</h1>
+<a class="btn-sm btn-success" href="{{ path('admin_contenus_accueil_new') }}">Nouveau</a>
 
     <table class="table" data-sorting="true" data-filtering="true" data-paging="true" data-paging-size="3">
         <thead>
             <tr>
                 <th>Titre</th>
-                <th>SousTitre</th>
+                <th>Sous Titre</th>
                 <th>Description</th>
-                <th>ImageName</th>
+                <th>Image</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -23,8 +25,8 @@
                 <td>{{ contenus_accueil.description }}</td>
                 <td><img src="{{ asset('images/accueil/' ~ contenus_accueil.imageName ) }}" alt="{{ contenus_accueil.titre }}" class="img-list-admin"></td>
                 <td>
-                    <a href="{{ path('admin_contenus_accueil_show', {'id': contenus_accueil.id}) }}">show</a>
-                    <a href="{{ path('admin_contenus_accueil_edit', {'id': contenus_accueil.id}) }}">edit</a>
+                    <a class="btn-sm btn-secondary" style="color: #ECECEC" href="{{ path('admin_contenus_accueil_show', {'id': contenus_accueil.id}) }}"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                    <a class="btn-sm btn-secondary" style="color: #ECECEC" href="{{ path('admin_contenus_accueil_edit', {'id': contenus_accueil.id}) }}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
                 </td>
             </tr>
         {% else %}
@@ -35,5 +37,4 @@
         </tbody>
     </table>
 
-    <a href="{{ path('admin_contenus_accueil_new') }}">Create new</a>
 {% endblock %}

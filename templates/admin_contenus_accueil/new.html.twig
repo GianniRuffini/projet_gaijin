@@ -1,13 +1,14 @@
 {% extends 'base-admin.html.twig' %}
 
-{% block title %}New ContenusAccueil{% endblock %}
+{% block title %}Nouveau Contenus Accueil{% endblock %}
 
 {% block body %}
-    <h1>Create new ContenusAccueil</h1>
+    <a class="btn-sm btn-secondary"href="{{ path('admin_contenus_accueil_index') }}">Retour</a>
+
+    <h1 class="mt-3">Créer un nouveau Contenus pour l'accueil</h1>
 
     {{ include('admin_contenus_accueil/_form.html.twig') }}
 
-    <a href="{{ path('admin_contenus_accueil_index') }}">back to list</a>
 {% endblock %}
 
 {% block javascripts %}

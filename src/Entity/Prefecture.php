@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\PrefectureRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -31,6 +33,16 @@ class Prefecture
      * @ORM\ManyToOne(targetEntity=Contenus::class, inversedBy="prefectures")
      */
     private $region;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=User::class, mappedBy="prefectureList")
+     */
+    private $users;
+
+    public function __construct()
+    {
+        $this->users = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -69,6 +81,33 @@ class Prefecture
     public function setRegion(?Contenus $region): self
     {
         $this->region = $region;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|User[]
+     */
+    public function getUsers(): Collection
+    {
+        return $this->users;
+    }
+
+    public function addUser(User $user): self
+    {
+        if (!$this->users->contains($user)) {
+            $this->users[] = $user;
+            $user->addPrefectureList($this);
+        }
+
+        return $this;
+    }
+
+    public function removeUser(User $user): self
+    {
+        if ($this->users->removeElement($user)) {
+            $user->removePrefectureList($this);
+        }
 
         return $this;
     }

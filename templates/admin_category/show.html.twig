@@ -1,9 +1,11 @@
 {% extends 'base-admin.html.twig' %}
 
-{% block title %}Category{% endblock %}
+{% block title %}Categorie{% endblock %}
 
 {% block body %}
-    <h1>Category</h1>
+    <a class="btn-sm btn-secondary" href="{{ path('admin_category_index') }}">Retour</a>
+
+    <h1 class="mt-3">Categorie</h1>
 
     <table class="table">
         <tbody>
@@ -16,7 +18,7 @@
                 <td>{{ category.titre }}</td>
             </tr>
             <tr>
-                <th>SousTitre</th>
+                <th>Sous Titre</th>
                 <td>{{ category.sousTitre }}</td>
             </tr>
             <tr>
@@ -26,9 +28,8 @@
         </tbody>
     </table>
 
-    <a href="{{ path('admin_category_index') }}">back to list</a>
 
-    <a href="{{ path('admin_category_edit', {'id': category.id}) }}">edit</a>
+    <a class="btn-sm btn-success" href="{{ path('admin_category_edit', {'id': category.id}) }}"><i class="fas fa-check"></i></a>
 
     {{ include('admin_category/_delete_form.html.twig') }}
 {% endblock %}

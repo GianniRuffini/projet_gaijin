@@ -5,6 +5,16 @@
 {% endblock %}
 
 {% block body %}
+{% for label, messages in app.flashes(['success', 'warning', 'danger']) %}
+    {% for message in messages %}
+        <div class="alert alert-{{ label }} alert-dismissible fade show mt-3" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    {% endfor %}
+{% endfor %}
+
+
     <div class="container">
         <div class="text-center my-3">
             <img src="{{ asset("images/photoLocal/kotaete.png") }}" alt="logo"></a>
@@ -25,6 +35,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-9">
+                <a href="{{ path('faq_new') }}"><button type="button" class="btn btn-dark">Poser une question</button></a>
+                <hr>
                     <h2 id="titleColor">
                         Dernières questions posées
                     </h2>
@@ -39,8 +51,6 @@
                         {{ faq.question }}
                     </p>
                 {% endfor %}
-                <hr>
-                <a href="{{ path('faq_new') }}"><button type="button" class="btn btn-dark">Poser une question</button></a>
                 </div>
 
                 <div class="col-3">    
@@ -61,3 +71,19 @@
 
 {% endblock %}
         
+{% block javascript %}
+<script>
+
+        //on verifie si il y a des objets de la classe alert dans el dom de la page à l'aide du 
+    //sélecteur jQuery $("") qui comme on sélectionne une classe nous renvoie un tableau
+    //dont on verifie que la longeur est >0
+    if($(".alert").length>0){
+        //on crée une pause avec setTimeout qui déclenchera une fonction anonyme aprés 2 seconde
+        setTimeout(function(){
+            //On déclanche la disparition en fondu (animation de style css ) des alerts
+            //Lorsque le fondu est effectué on supprime les alerts du dom avec remove();
+            $(".alert").fadeOut(500, function(){ $(".alert").remove() });
+        }, 2000);
+    }
+    </script>
+{% endblock %}

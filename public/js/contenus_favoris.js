@@ -5,11 +5,12 @@ if($(".bt-favori").length > 0){
         event.preventDefault();
         event.stopPropagation();
         var bt = $(this);
-        var contenusId = $(this).attr("data-livreid"); //$(this) fait référence au bouton ayant déclenché l'évenement
+        var prefectureId = $(this).attr("data-contenusId"); //$(this) fait référence au bouton ayant déclenché l'évenement
+        console.log(prefectureId);
         $.ajax({
             url: '/profile/addfavori',
             type: 'post',
-            data:"id="+contenusId
+            data:"id="+prefectureId
         }).done(function(response){
             $(bt).hide();
         }).fail(function(error){

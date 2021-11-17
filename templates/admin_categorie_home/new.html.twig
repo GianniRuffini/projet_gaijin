@@ -1,11 +1,12 @@
 {% extends 'base-admin.html.twig' %}
 
-{% block title %}New CategoryHome{% endblock %}
+{% block title %}Nouvelle categorie accueil{% endblock %}
 
 {% block body %}
-    <h1>Create new CategoryHome</h1>
+    <a class="btn-sm btn-secondary" href="{{ path('admin_category_home_index') }}">Retour</a>
+
+    <h1 class="mt-3">Créer une nouvelle categorie pour l'accueil</h1>
 
     {{ include('admin_categorie_home/_form.html.twig') }}
 
-    <a href="{{ path('admin_category_home_index') }}">back to list</a>
 {% endblock %}

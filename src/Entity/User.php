@@ -109,10 +109,16 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $commentaires;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=Prefecture::class, inversedBy="users")
+     */
+    private $prefectureList;
+
     public function __construct()
     {
         $this->faqUser = new ArrayCollection();
         $this->commentaires = new ArrayCollection();
+        $this->prefectureList = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -380,6 +386,30 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
                 $commentaire->setAuthentification(null);
             }
         }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Prefecture[]
+     */
+    public function getPrefectureList(): Collection
+    {
+        return $this->prefectureList;
+    }
+
+    public function addPrefectureList(Prefecture $prefectureList): self
+    {
+        if (!$this->prefectureList->contains($prefectureList)) {
+            $this->prefectureList[] = $prefectureList;
+        }
+
+        return $this;
+    }
+
+    public function removePrefectureList(Prefecture $prefectureList): self
+    {
+        $this->prefectureList->removeElement($prefectureList);
 
         return $this;
     }

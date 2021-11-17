@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Form\UserProfileType;
 use App\Repository\ContenusRepository;
+use App\Repository\PrefectureRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -39,16 +40,16 @@ class ProfileController extends AbstractController
     }
 
     #[Route('/profile/addfavori')]
-    public function addFavori(Request $request, ContenusRepository $contenusRepository): Response
+    public function addFavori(Request $request, PrefectureRepository $prefectureRepository): Response
     {
         //on récupère l'id du contenus envoyer par ajax 
-        $contenusID = $request->request->get("id");
+        $prefectureID = $request->request->get("id");
         //on récupère le contenus 
-        $contenus = $contenusRepository->find($contenusID);
+        $prefecture = $prefectureRepository->find($prefectureID);
         //on récupère le user connécter
         $user = $this->getUser();
         //on ajoute le contenus dans la liste de l'utilisateur
-        $user->addBookList($contenus);
+        $user->addPrefectureList($prefecture);
         //on récupere un entity manager pour faire un persist et un flux
         $em = $this->getDoctrine()->getManager();
         $em->persist($user);
@@ -57,15 +58,15 @@ class ProfileController extends AbstractController
         return new Response("ok");
     }
 
-    #[Route('/profile/removefavori/{id}', name: 'deleteLivreListe')]
-    public function removeFavori(int $id, ContenusRepository $contenusRepository): Response
+    #[Route('/profile/removefavori/{id}', name: 'deletePrefectureList')]
+    public function removeFavori(int $id, PrefectureRepository $prefectureRepository): Response
     {
         //on récupère le livre 
-        $contenus = $contenusRepository->find($id);
+        $prefecture = $prefectureRepository->find($id);
         //on récupère le user connéter
         $user = $this->getUser();
         //on ajoute le livre dans la liste de l'utilisateur
-        $user->removeBookList($contenus);
+        $user->removePrefectureList($prefecture);
         //on récupere un entity manager pour faire un persist et un flux
         $em = $this->getDoctrine()->getManager();
         $em->persist($user);
