@@ -42,7 +42,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * @Assert\Length(
-     *      min = 6,
+     *      min = 8,
      *      max = 50,
      *      minMessage = "Votre mot de passe doit contenir 6 carractère au minimum",
      *      maxMessage = "Votre mot de passe ne peut pas contenir plus de 50 carractères"
@@ -56,7 +56,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * @Assert\Length(
-     *      min = 6,
+     *      min = 8,
      *      max = 50,
      *      minMessage = "Votre mot de passe doit contenir 6 carractère au minimum",
      *      maxMessage = "Votre mot de passe ne peut pas contenir plus de 50 carractères"
