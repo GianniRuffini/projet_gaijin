@@ -21,6 +21,8 @@ class PrefectureType extends AbstractType
             'class' => Contenus::class,
             'choice_label' => 'titre',
         ])
+            ->add('latitude')
+            ->add('longitude')
         ;
     }
 

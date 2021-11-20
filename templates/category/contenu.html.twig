@@ -178,7 +178,7 @@
             <div class="row">
                 <h1>{{prefecture.titre}}
                 {% if app.user and prefecture not in app.user.prefectureList %}
-                    <button data-contenusId="{{ prefecture.id }}" class="btn btn-sm btn-warning absolute text-white bt-favori" style="max-width:35px"><i class="fa fa-star" aria-hidden="true"></i></button>
+                    <button data-contenusId="{{ prefecture.id }}" data-longitude="{{prefecture.longitude}}" data-latitude="{{prefecture.latitude}}" class="btn btn-sm btn-warning absolute text-white bt-favori" style="max-width:35px"><i class="fa fa-star" aria-hidden="true"></i></button>
                 </h1>
                 {% endif %}
                 

@@ -37,38 +37,43 @@
     </ul>
     <div class="tab-content form-profile" id="myTabContent">
         <div class="tab-pane fade" id="info" role="tabpanel" aria-labelledby="home-tab">
-            {{ form_start(form) }}
-                {{ form_widget(form) }}
-                <button class="btn btn-success mt-3" type="submit">Modifier</button>
-            {{ form_end(form) }}
+            <div class="row">
+                {{ form_start(form) }}
+                    {{ form_widget(form) }}
+                    <button class="btn btn-success mt-3" type="submit">Modifier</button>
+                {{ form_end(form) }}
+            </div>
             <div style="height:100px"></div>
         </div>
+ 
+        
         <div class="container tab-pane fade show active" id="liste" role="tabpanel" aria-labelledby="profile-tab">   
             <div class="row">
-                <div class="col-12 col-md-6 col-lg-12 mb-4">
+                <div class="col-12 col-md-6 col-lg-6 mb-4">
                         <div class="card" style="margin: auto; background-color: #f5f5ef; box-shadow: 5px 5px 15px rgba(0,0,0,0.9); text-align: center;" id="maCarte"></div>
                     </div>
                 </div>
-                    
+                {% if app.user.prefectureList|length > 0 %}
                 {% for prefecture in app.user.prefectureList %}
-                {% if prefecture.titre is defined and prefecture.titre is not null %}
-                <div class="col-12 col-md-6 col-lg-12 mb-4">
-                    <div class="card" style="margin: auto; background-color: #f5f5ef; box-shadow: 5px 5px 15px rgba(0,0,0,0.9); text-align: center;">
-                                    <h6 class="mt-2">{{ prefecture.titre }}
-                                        <a href="{{ path('deletePrefectureList', { 'id': prefecture.id }) }}"><i class="fas fa-trash-alt btn btn-danger" aria-hidden="true"></i></a>
-                                    </h6>
-                                    {% else %}
-                                <p>Vous n'avez pas de prefecture dans votre liste de voyage</p>
-                            {% endif %}
-                        {% endfor %}
+                <div class="card" style="margin: auto; background-color: #f5f5ef; box-shadow: 5px 5px 15px rgba(0,0,0,0.9); text-align: center;">
+                    <div class="col-12 col-md-6 col-lg-6 mb-4">
+                        <div class="prefecture" style="" data-titre="{{ prefecture.titre }}" data-longitude="{{prefecture.longitude}}" data-latitude="{{prefecture.latitude}}" >
+                            <h6 class="mt-2 list-favori" >{{ prefecture.titre }}
+                                <a href="{{ path('deletePrefectureList', { 'id': prefecture.id }) }}"><i class="fas fa-trash-alt btn btn-danger" aria-hidden="true"></i></a>
+                            </h6>
+                            
+                        </div>
                     </div>
                 </div>
+                {% endfor %}
+            {% else %}
+                <p>Vous n'avez pas de prefecture dans votre liste de voyage</p>
+            {% endif %}
             </div>
         </div>
+        <div style="height:100px"></div>
     </div>
 </div>
-<div style="height:100px"></div>
-
 
 
 {% endblock %}

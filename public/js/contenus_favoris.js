@@ -6,15 +6,21 @@ if($(".bt-favori").length > 0){
         event.stopPropagation();
         var bt = $(this);
         var prefectureId = $(this).attr("data-contenusId"); //$(this) fait référence au bouton ayant déclenché l'évenement
-        console.log(prefectureId);
+        
         $.ajax({
             url: '/profile/addfavori',
             type: 'post',
-            data:"id="+prefectureId
+            data:
+                "id="+prefectureId
+        
         }).done(function(response){
             $(bt).hide();
+            
         }).fail(function(error){
             console.log("ajax error :", error);
         })
     });
+
+    
 }
+

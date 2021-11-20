@@ -2,12 +2,14 @@
 
 namespace App\Controller;
 
+use App\Entity\Prefecture;
 use App\Form\UserProfileType;
 use App\Repository\ContenusRepository;
 use App\Repository\PrefectureRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
@@ -46,6 +48,7 @@ class ProfileController extends AbstractController
         $prefectureID = $request->request->get("id");
         //on récupère le contenus 
         $prefecture = $prefectureRepository->find($prefectureID);
+
         //on récupère le user connécter
         $user = $this->getUser();
         //on ajoute le contenus dans la liste de l'utilisateur
@@ -74,4 +77,7 @@ class ProfileController extends AbstractController
         //redirection
         return $this->redirectToRoute("profile");
     }
+
+
+
 }
