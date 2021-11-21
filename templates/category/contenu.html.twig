@@ -172,6 +172,7 @@
         </p>
     </div>
 
+    {# on renvoie chaque prefecture à ca région #}
     <div class="text-center">
         {% for prefecture in contenu.prefectures %}
         {% if prefecture.region.id == contenu.id %}

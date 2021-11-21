@@ -5,6 +5,7 @@
 {% endblock %}
 
 {% block body %}
+{# on affiche le message flash en haut de la page #}
 {% for label, messages in app.flashes(['success', 'warning', 'danger']) %}
     {% for message in messages %}
         <div class="alert alert-{{ label }} alert-dismissible fade show mt-3" role="alert">

@@ -9,13 +9,17 @@
 
 
 body{
-	font-family: 'Montserrat' sans-serif;
+	font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 	background-color: white;
+
+	// position et dimension du logo
 	.logo{
 		max-height: 200px;
         display: flex;
         margin: auto;
 	}
+
+	//position et dimension de la navbar
 	.navbar{
 		background: #eaeae1;
 		width: 100%;
@@ -66,6 +70,7 @@ body{
 		font-weight: bold;
 	}
 
+	//position et dimension des icones
 	.icon1{
 		display: inline-block;
 		position: relative;

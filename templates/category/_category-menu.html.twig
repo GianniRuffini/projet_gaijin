@@ -1,5 +1,6 @@
 {% for cat in cats %}
 
+{# on recupère le chemin et on le renvois sur la nav bar  #}
 <li class="nav-item dropdown">
     <a class="nav-link {% if cat.type|length >0 %}dropdown-toggle{% endif %}" href="{{ path('show_cat', {'catId':cat.id}) }}" role="button" aria-haspopup="true" aria-expanded="false">
             {{ cat.titre }}
@@ -7,7 +8,7 @@
     {% if cat.type|length >0 %}
     <div class="dropdown-menu">
         {% for t in cat.type %}
-        
+            {# on récupère le chemin et on le renvois dans le sous menus de la nav bar #}
             <a class="dropdown-item" href="{{path('show_content', {'contentId':t.id})}}">
                 {{ t.titre }}
             </a>

@@ -6,7 +6,7 @@
     let prefectures = [];
 
 console.log($(".prefecture"))
-    //on enregistre toute les cordonnées des prefecture
+    //on boucle chaque prefecture et on recupère le titre 
     $(".prefecture").each(function(){
         prefectures[$(this).attr("data-titre")] = {"lat" : $(this).attr("data-latitude"), "lon" : $(this).attr("data-longitude")}
     })

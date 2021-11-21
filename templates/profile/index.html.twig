@@ -3,7 +3,7 @@
 {% block title %}Hello ProfileController!{% endblock %}
 
 {% block body %}
-{# Affichage des meassages s'il y en a #}
+{# Affichage des messages s'il y en a #}
 {% for label, messages in app.flashes(['success', 'warning', 'danger']) %}
     {% for message in messages %}
         <div class="alert alert-{{ label }} alert-dismissible fade show mt-3" role="alert">

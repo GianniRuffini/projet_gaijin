@@ -1,5 +1,6 @@
 body{
 
+    //style et position des card de l'accueil
     .voyage{
         margin: auto;
         width: 400px;
@@ -47,6 +48,7 @@ body{
         box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
     }
 
+    //position et dimension des images de fond de l'accueil
     #para1{
         background-image: url("../images/photoLocal/carousel/image1.jpg");
         width: 100%;

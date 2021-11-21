@@ -1,4 +1,5 @@
 var $=jQuery
+// on recupère le mouvement de la souris quand elle rentre dans la carte
 $(document).ready(function(){
     $(".region").mouseenter(function(e){
         console.log($(this).attr('id'));
@@ -13,6 +14,7 @@ $(document).ready(function(){
         //console.log($('.info-bulle').css('top'));
     })
 
+    //on change la couleur de la partie de la carte au survol de la carte ainsi que la couleur du nom de la region
     $('.region-1').hover(function(e){
         console.log('survol:',$(this).attr(('title')))
         $('.info-bulle').html($(this).attr(('title')))

@@ -41,11 +41,11 @@ class PrefectureController extends AbstractController
     #[Route('/prefecture/removefavori/{id}', name: 'deletePrefectureList')]
     public function removeFavori(int $id, PrefectureRepository $prefectureRepository): Response
     {
-        //on récupère le livre 
+        //on récupère la prefecture
         $prefecture = $prefectureRepository->find($id);
-        //on récupère le user connéter
+        //on récupère le user connécter
         $user = $this->getUser();
-        //on ajoute le livre dans la liste de l'utilisateur
+        //on ajoute la prefecture dans la liste de l'utilisateur
         $user->removePrefectureList($prefecture);
         //on récupere un entity manager pour faire un persist et un flux
         $em = $this->getDoctrine()->getManager();

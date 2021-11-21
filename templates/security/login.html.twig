@@ -4,13 +4,15 @@
 
 {% block body %}
 <form method="post">
+    {# si il y a une erreur on affiche le message #}
     {% if error %}
         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
 
+    {# si on est connecter on affiche le message #}
     {% if app.user %}
         <div class="mb-3">
-            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+            Vous êtes déjà connecter en tant que {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
         </div>
     {% endif %}
     
@@ -22,6 +24,7 @@
                     <div class="col-12 col-md-6 col-lg-4 mt-4">
                         <a href="#" class="nav-log" style="color:#bb362c">Se connecter</a>
                     </div>
+                    {# si on est pas connecter on affiche les differentes routes  #}
                         {% if not is_granted('ROLE_USER') %}
                     <div class="col-12 col-md-6 col-lg-4 mt-4">
                         <a href="{{ path('app_register') }}" class="nav-log" style="color:#bb362c">Créer un nouveau compte</a>

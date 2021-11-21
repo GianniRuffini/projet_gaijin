@@ -4,7 +4,6 @@
 
 {% block body %}
 
-{# {% if home.category.id == 1 %} #}
     <div class="img1">
         <img src="{{ asset('images/accueil/' ~ home.contenusAccueil.imageName ) }}" alt="{{ home.contenusAccueil.titre }}">
     </div> 
@@ -20,21 +19,5 @@
             {{ home.contenusAccueil.description|raw }}
         </p>
     </div>
-
-{# {% endif %} #}
-
-{# {% if home.category.id == 2 %}
-    <img src="{{ asset('images/accueil/' ~ home.imageName ) }}" alt="{{ home.titre }}">
-    <h1>
-        {{ home.contenusAccueil.titre }}
-    </h1>
-    <h3>
-        {{ home.contenusAccueil.sousTitre }}
-    </h3>
-    <p>
-        {{ home.contenusAccueil.description|raw }}
-    </p>
-
-{% endif %} #}
     
 {% endblock %}

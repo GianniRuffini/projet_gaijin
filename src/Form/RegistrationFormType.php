@@ -18,7 +18,7 @@ use Symfony\Component\Validator\Constraints\Regex;
 class RegistrationFormType extends AbstractType
 {
     /**
-     * Build a form with html attributes and validator constraints.
+     * Construisez un formulaire avec des attributs html et des contraintes de validateur.
      *
      * @param FormBuilderInterface<callable> $builder
      * @param array<mixed> $options
@@ -31,8 +31,8 @@ class RegistrationFormType extends AbstractType
             ->add('email')
             ->add('pseudo')
             ->add('plainPassword', PasswordType::class, [
-                // instead of being set onto the object directly,
-                // this is read and encoded in the controller
+                // au lieu d'être placé directement sur l'objet,
+                // ceci est lu et codé dans le contrôleur
                 'mapped' => false,
                 'attr' => ['autocomplete' => 'new-password'],
                 'constraints' => [
@@ -41,13 +41,14 @@ class RegistrationFormType extends AbstractType
                     ]),
                     new Length([
                         'min' => 8,
-                        'minMessage' => 'Your password should be at least {{ limit }} characters',
-                        // max length allowed by Symfony for security reasons
+                        'minMessage' => 'Votre mot de passe doit comporter au moins {{ limit }} caractères',
+                        // longueur max autorisée par Symfony pour des raisons de sécurité
                         'max' => 4096,
                     ]),
                     new Regex([
                         'pattern' => "/^(?=.*\d)(?=.*[A-Z])(?=.*[-+!*$@%_])(?!.*(.)\1{2}).*[a-z]/m",
                         'message' => "Votre mot de passe doit contenir 8 caractère et inclure 1 lettre en majuscule, 1 nombre, et 1 caractère spécial."
+                        //on augmente la securité avec le regex 
                     ])
                 ],
             ])
