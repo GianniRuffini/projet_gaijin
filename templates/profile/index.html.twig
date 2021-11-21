@@ -24,19 +24,19 @@
             </a>
             {% endif %}
         </div>
-            <li class="nav-item" id="section-tabs-header" role="presentation">
-                <button class="nav-link active" id="profile-tab" data-bs-toggle="tab" data-bs-target="#liste" type="button" role="tab" aria-controls="profile" aria-selected="true">
-                    Ma liste de voyage
-                </button>
-            </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="home-tab" data-bs-toggle="tab" data-bs-target="#info" type="button" role="tab" aria-controls="home" aria-selected="false">
+                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#info" type="button" role="tab" aria-controls="home" aria-selected="false">
                     Mes informations
                 </button>
             </li>
+            <li class="nav-item" id="section-tabs-header" role="presentation">
+                <button class="nav-link " id="profile-tab" data-bs-toggle="tab" data-bs-target="#liste" type="button" role="tab" aria-controls="profile" aria-selected="true">
+                    Mes questions 
+                </button>
+            </li>
     </ul>
-    <div class="tab-content form-profile" id="myTabContent">
-        <div class="tab-pane fade" id="info" role="tabpanel" aria-labelledby="home-tab">
+    <div class="tab-content " id="myTabContent">
+        <div class="tab-pane fade show active" id="info" role="tabpanel" aria-labelledby="home-tab">
             <div class="row">
                 {{ form_start(form) }}
                     {{ form_widget(form) }}
@@ -45,30 +45,15 @@
             </div>
             <div style="height:100px"></div>
         </div>
- 
+
         
         <div class="container tab-pane fade show active" id="liste" role="tabpanel" aria-labelledby="profile-tab">   
             <div class="row">
-                <div class="col-12 col-md-6 col-lg-6 mb-4">
-                        <div class="card" style="margin: auto; background-color: #f5f5ef; box-shadow: 5px 5px 15px rgba(0,0,0,0.9); text-align: center;" id="maCarte"></div>
-                    </div>
-                </div>
-                {% if app.user.prefectureList|length > 0 %}
-                {% for prefecture in app.user.prefectureList %}
                 <div class="card" style="margin: auto; background-color: #f5f5ef; box-shadow: 5px 5px 15px rgba(0,0,0,0.9); text-align: center;">
-                    <div class="col-12 col-md-6 col-lg-6 mb-4">
-                        <div class="prefecture" style="" data-titre="{{ prefecture.titre }}" data-longitude="{{prefecture.longitude}}" data-latitude="{{prefecture.latitude}}" >
-                            <h6 class="mt-2 list-favori" >{{ prefecture.titre }}
-                                <a href="{{ path('deletePrefectureList', { 'id': prefecture.id }) }}"><i class="fas fa-trash-alt btn btn-danger" aria-hidden="true"></i></a>
-                            </h6>
-                            
-                        </div>
-                    </div>
+                    {# {% if user.faq|length >0 %}
+                        <a href="{{ path('faq_show', {'id': faq.id}) }}">{{user.faq.titre}}</a>
+                    {% endif %} #}
                 </div>
-                {% endfor %}
-            {% else %}
-                <p>Vous n'avez pas de prefecture dans votre liste de voyage</p>
-            {% endif %}
             </div>
         </div>
         <div style="height:100px"></div>

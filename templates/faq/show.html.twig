@@ -22,12 +22,15 @@
     
     
             <div class="container">
-            
-                <h1>
-                    {{ faq.titre }}
-                </h1>
+                <div class="text-center my-3">
+                    <img src="{{ asset("images/photoLocal/kotaete.png") }}" alt="logo"></a>
+                    <h1>
+                        {{ faq.titre }}
+                    </h1>
+                </div>
 
-                <p style="font-size:10px"> {{faq.commentaires|length}} réponse</p>
+                <h4 class="text-center" style="color:#8a8a76"> {{faq.commentaires|length}} réponse</h4>
+                <div class="separator mb-5"></div>
 
                 <p>
                     {{ faq.question }}
@@ -35,23 +38,31 @@
             </div>
             <div style="height:100px"></div>
             <div class="container">
-                <div class="col-xs-2 col-sm-3 gutter-0">
-                    <h2> Les {{ faq.commentaires|length}} réponses à la quéstion posée</h2>
+                <div class="card " style="margin: auto; background-color: #f5f5ef; box-shadow: 5px 5px 15px rgba(0,0,0,0.9); text-align: center;">
+                    <h2 class="text-center"> Les {{ faq.commentaires|length}} réponses à la quéstion posée</h2>
+                    <div class="separator mb-5"></div>
                     {% for commentaire in faq.commentaires %}
-                        {% if commentaire.parent == null  %}
-                            <h3>Question de {{commentaire.user.pseudo}}</h3>
-                            <p>Publié par {{commentaire.user.pseudo}} le {{commentaire.createdAt|date("d/m/Y H:i")}}</p>
-                            <div>{{commentaire.contenuscommentaire|raw}}</div>
-                            <p><a href="#ajout-commentaire" data-reply data-id="{{commentaire.id}}" class="btn btn-secondary press">Répondre</a></p>
-                            
-                            {# on affiche les reponses #}
-                            {% for reply in commentaire.reponse %}
-                                <p>Réponse publiée par {{reply.user.pseudo}} le {{reply.createdAt|date("d/m/Y H:i")}}</p>
-                                <div>{{reply.contenuscommentaire|raw}}</div>
-                            {% endfor %}
+                    {% if commentaire.parent == null  %}
+                    
+                    <h3>Réponse de {{commentaire.user.pseudo}}</h3>
+                    <p style="font-size:small">Publié par {{commentaire.user.pseudo}} le {{commentaire.createdAt|date("d/m/Y H:i")}}</p>
+                    
+                    <div>{{commentaire.contenuscommentaire|raw}}</div>
+                    <p><a href="#ajout-commentaire" data-reply data-id="{{commentaire.id}}" class="btn btn-secondary press">Répondre</a></p>
+                    <div class="separator mt-5 mb-2"></div>
+                    <div class="card float-right " style="width: 1200px; margin: auto; text-align: center;">
+                        {# on affiche les reponses #}
+                        {% for reply in commentaire.reponse %}
+                            <p>Réponse publiée par {{reply.user.pseudo}} le {{reply.createdAt|date("d/m/Y H:i")}}</p>
+                            <div>{{reply.contenuscommentaire|raw}}</div>
+                        {% endfor %}
                         {% endif %}
-                    {% endfor %}
+                        {% endfor %}
+                    </div>
                 </div>
+            </div>
+
+            <div class="container">
                 <div style="height:100px"></div>
                 <div class="col-xs2 col-sm3" id="ajout-commentaire">
                     <h3> Ajouter une réponse</h3>
@@ -60,6 +71,7 @@
                     </div>
                     {{ form(form) }}
                 </div>
+            </div>
             </div>
 {% endblock %}
 

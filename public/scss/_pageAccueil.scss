@@ -46,4 +46,44 @@ body{
         transform: scale(1.2);
         box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
     }
+
+    #para1{
+        background-image: url("../images/photoLocal/carousel/image1.jpg");
+        width: 100%;
+        height: 500px;
+        display: block;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+    
+    #para2{
+        background-image: url("../images/photoLocal/carousel/image2.jpg");
+        width: 100%;
+        height: 500px;
+        display: block;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+    
+    #para3{
+        background-image: url("../images/photoLocal/carousel/image3.jpg");
+        width: 100%;
+        height: 500px;
+        display: block;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+    
+    #para4{
+        background-image: url("../images/photoLocal/carousel/image4.jpg");
+        width: 100%;
+        height: 500px;
+        display: block;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
 }

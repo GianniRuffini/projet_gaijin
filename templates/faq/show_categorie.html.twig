@@ -13,9 +13,12 @@
 {% block body %}
 
     <div class="container">
-        <h1>
-            {{ categorie.titre }}
-        </h1>
+        <div class="text-center my-3">
+            <img src="{{ asset("images/photoLocal/kotaete.png") }}" alt="logo"></a>
+            <h1>
+                {{ categorie.titre }}
+            </h1>
+        </div>
         {% for faqs in faq %}
         
     

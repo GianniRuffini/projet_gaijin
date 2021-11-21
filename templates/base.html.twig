@@ -85,13 +85,16 @@
                             </a>
                         {% endif %}
 
-                        <!-- contact -->
-                            {# <a
+                        <!-- liste de voyage -->
+                        {% if is_granted('ROLE_USER') %}
+                            <a
                                 class="icon2 btn btn-primary btn-floating m-1"
-                                href="#!"
+                                href="{{path('prefecture')}}"
                                 role="button"
-                                ><i class="far fa-envelope"></i>
-                            </a> #}
+                                ><i class="fas fa-map-marked-alt"></i>
+
+                            </a>
+                        {% endif %}
 
                         <!-- Facebook -->
                             {# <a
@@ -124,7 +127,7 @@
                                 role="button"
                                 ><i class="fas fa-play"></i>
                             </a>
-                         #}
+                        #}
                     </li>
 
                 </ul>

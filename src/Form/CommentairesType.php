@@ -31,6 +31,7 @@ class CommentairesType extends AbstractType
                 'label' => 'Votre commentaire',
             ])
             ->add('rgpd', CheckboxType::class, [
+                'label' => " J'accepte le règlement général sur la protection des données",
                 'constraints' => [
                     new NotBlank() //protege coté serveur
                 ]

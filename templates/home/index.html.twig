@@ -5,8 +5,10 @@
 {% endblock %}
 
 {% block body %}
+<div id="para1">
+</div>
 {# carousel #}
-    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    {# <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -51,7 +53,7 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
     </button>
-    </div>
+    </div> #}
 {# fin #}
 
 {# à voir en ce moment #}
@@ -79,6 +81,9 @@
         </div>
     </div>
 
+    <div id="para2"></div>
+
+
         <div style="background:#f5f5ef">
             <div class="text-center my-5">
                 <img src="{{ asset('images/photoLocal/logoTitre/calendrier.png')}}" style="width: 70px; heigth: 70px;" alt="logo-tong">
@@ -105,16 +110,19 @@
                 </div>
             </div>
         </div>
+{# fin #}
+
+{# debut carte du japon #}
+
+    <div id="para3"></div>
     <div class="container">
         <div class="text-center my-5">
+        <img src="{{ asset('images/photoLocal/logoTitre/travel.png')}}" style="width: 60px; heigth: 60px;" alt="logo-tong">
         <h2>QUE VISITER AU JAPON</h2>
         <h4 style="color:#8a8a76">Bien choisir ses destinations</h4>
             <div class="separator"></div>
         </div>
-{# fin #}
 
-
-{# debut carte du japon #}
         <div class="info-bulle"></div>
         <div class="row">
             <div class="col-12 col-md-6 col-lg-6 mb-4">
@@ -272,7 +280,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-6">
+            <div class="col-12 col-md-6 col-lg-6 mb-4">
                 <div class="row">
                     {% for home in homes %}
                     {% if home.category.id == 3 %}
@@ -292,7 +300,7 @@
         </div>
     </div>
 {# fin carte du japon #}
-        
     
+    <div id="para4"></div>
 
 {% endblock %}

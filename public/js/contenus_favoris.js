@@ -8,7 +8,7 @@ if($(".bt-favori").length > 0){
         var prefectureId = $(this).attr("data-contenusId"); //$(this) fait référence au bouton ayant déclenché l'évenement
         
         $.ajax({
-            url: '/profile/addfavori',
+            url: '/prefecture/addfavori',
             type: 'post',
             data:
                 "id="+prefectureId
