@@ -4115,6 +4115,20 @@ textarea.form-control-lg {
   flex-basis: 100%;
   flex-grow: 1;
   align-items: center;
+  text-align: center;
+  background: #eaeae1;
+}
+
+@media all and (max-width: 991px)
+{
+  .navbar-collapse {
+    max-width: 250px;
+    flex-basis: 100%;
+    flex-grow: 1;
+    align-items: center;
+    text-align: center;
+    background: #eaeae1;
+  }
 }
 
 .navbar-toggler {
@@ -4131,41 +4145,29 @@ textarea.form-control-lg {
     transition: none;
   }
 }
+
 .navbar-toggler:hover {
   text-decoration: none;
+  background-color: #c9c9b9;
 }
 .navbar-toggler:focus {
   text-decoration: none;
   outline: 0;
   box-shadow: 0 0 0 0.25rem;
+  
 }
 
-.navbar-toggler-icon {
-  display: inline-block;
-  width: 1.5em;
-  height: 1.5em;
-  vertical-align: middle;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100%;
-}
-
-.navbar-nav-scroll {
-  max-height: var(--bs-scroll-height, 75vh);
-  overflow-y: auto;
-}
 
 @media (min-width: 576px) {
   .navbar-expand-sm {
     flex-wrap: nowrap;
     justify-content: flex-start;
+    
   }
   .navbar-expand-sm .navbar-nav {
     flex-direction: row;
   }
-  .navbar-expand-sm .navbar-nav .dropdown-menu {
-    position: absolute;
-  }
+  
   .navbar-expand-sm .navbar-nav .nav-link {
     padding-right: 0.5rem;
     padding-left: 0.5rem;

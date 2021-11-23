@@ -47,16 +47,26 @@
         </div>
 
         
-        <div class="container tab-pane fade show active" id="liste" role="tabpanel" aria-labelledby="profile-tab">   
+        <div class="container tab-pane fade" id="liste" role="tabpanel" aria-labelledby="profile-tab">   
             <div class="row">
-                <div class="card" style="margin: auto; background-color: #f5f5ef; box-shadow: 5px 5px 15px rgba(0,0,0,0.9); text-align: center;">
-                    {# {% if user.faq|length >0 %}
-                        <a href="{{ path('faq_show', {'id': faq.id}) }}">{{user.faq.titre}}</a>
-                    {% endif %} #}
+                <div class="card" style="margin: auto; background-color: #f5f5ef; box-shadow: 5px 5px 15px rgba(0,0,0,0.9); text-align: center;">   
+                {% for faq in app.user.faqUser %}
+                        <h1><a href="{{ path('faq_show', {'id': faq.id}) }}">{{ faq.titre }}</a></h1>
+                        {% if faq.question is defined and faq.question is not null %}
+                            <p>{{ faq.question|raw }}</p>
+                        {% endif %}
+                    
+                    <div >
+                
+                        <a class="btn-sm btn-secondary" href="{{ path('faq_edit', {'id': faq.id}) }}"><i class="fas fa-pencil-alt"></i></a>
+                        {{ include('faq/_delete.html.twig') }}
+                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
         <div style="height:100px"></div>
+        
     </div>
 </div>
 

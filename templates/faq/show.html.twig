@@ -33,13 +33,13 @@
                 <div class="separator mb-5"></div>
 
                 <p>
-                    {{ faq.question }}
+                    {{ faq.question|raw }}
                 </p>
             </div>
             <div style="height:100px"></div>
             <div class="container">
                 <div class="card " style="margin: auto; background-color: #f5f5ef; box-shadow: 5px 5px 15px rgba(0,0,0,0.9); text-align: center;">
-                    <h2 class="text-center"> Les {{ faq.commentaires|length}} réponses à la quéstion posée</h2>
+                    <h2 class="text-center"> {{ faq.commentaires|length}} réponse{% if faq.commentaires|length > 1 %}s {% endif %} à la quéstion posée</h2>
                     <div class="separator mb-5"></div>
                     {% for commentaire in faq.commentaires %}
                     {% if commentaire.parent == null  %}

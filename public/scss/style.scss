@@ -1,5 +1,4 @@
 @import "_navbar.scss";
-@import "_navbar_admin.scss";
 @import "_pageAccueil.scss";
 @import "_carteProfile.scss";
 @import "_map.scss";
@@ -8,11 +7,12 @@
 
 
 body{
-
-    .img-list-admin{
-        width: 40px;
-        height: 40px;
+    a {
+        color: #b41c0f;
+        text-decoration: none;
+    }
+    a:hover {
+        color: #383838;
     }
 
-    
 }

@@ -5,23 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>{% block title %}Gaijin{% endblock %}</title>
     
-    <!-- js -->
-    <link rel="stylesheet" href="{{ asset( 'js/navbar.js') }}">
+    
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 
     <!-- map -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-    crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css">
 
     <!--fontawesome-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset( 'css/admin.min.css') }}">
-    <link rel="stylesheet" href="{{ asset( 'css/styles.css') }}">
+    <link rel="stylesheet" href="{{ asset( 'css/style.min.css') }}">
+    {# <link rel="stylesheet" href="{{ asset( 'css/styles.css') }}"> #}
     
 {% block stylesheets %}{% endblock %}
 
@@ -33,7 +30,7 @@
 
     {# Navbar #}
     <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container-fluid">
+        <div class="container-fluid justify-content-end">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -173,7 +170,7 @@
     <a href="{{ path('home') }}"><img src="{{ asset("images/mon_logo.png") }}" style="border-radius:50% 20% / 10% 40%" alt="logo" class="logo-footer"></a>
     <div class="footer-menu mt-2 mb-4">
     <div class="container font-weight-bold">
-        <ul class="d-flex justify-content-center list-unstyled flex-wrap" style="width: 1110px; margin:auto;">
+        <ul class="d-flex justify-content-center list-unstyled flex-wrap" style=" margin:auto;">
             <!-- Copyright -->
             <li  class="pl-2 pr-3 position-relative" style="color:#fff;"> Gaijin ©2021 -- </li>
             <!-- End Copyright -->
@@ -204,7 +201,7 @@
                 <div class="col-lg-18 text-center">
                     <p><a href="http://collectif-japon.fr"><img alt="Collectif Japon" data-entity-type="" data-entity-uuid="" src="{{ asset("images/collectif-japon-logo.png") }}" class="lazy" /></a></p>
 
-    <p style="color:#fff; width: 777px; margin:auto"><em>Si GAIJIN vous a aidé ou renseigné d'une manière ou d'une autre, nous serions très heureux que vous partagiez le site autour de vous !</em></p>
+    <p style="color:#fff; margin:auto"><em>Si GAIJIN vous a aidé ou renseigné d'une manière ou d'une autre, nous serions très heureux que vous partagiez le site autour de vous !</em></p>
 
             </div>
         </div>
@@ -224,8 +221,7 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
-<script src="{{ asset( 'js/map.js' ) }}"></script>
-<script src="{{ asset("js/contenus_favoris.js") }}"></script>
+
 
 
 <!-- map -->
@@ -233,8 +229,12 @@
 integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
 crossorigin=""></script>
 <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
-
+<script src="{{ asset( 'js/map.js' ) }}"></script>
+<script src="{{ asset("js/contenus_favoris.js") }}"></script>
 <script src="{{ asset( 'js/carte_profile.js' ) }}"></script>
+<!-- navbar -->
+<link rel="stylesheet" href="{{ asset( 'js/navbar.js') }}">
+    
 
 <script>
     $(document).ready(function() {

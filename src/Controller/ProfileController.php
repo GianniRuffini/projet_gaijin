@@ -17,7 +17,7 @@ use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 class ProfileController extends AbstractController
 {
     #[Route('/profile', name: 'profile')]
-    public function index(Request $request, UserPasswordHasherInterface $uphi, UserRepository $userRepository): Response
+    public function index(Request $request, UserPasswordHasherInterface $uphi): Response
     {
         
         $user = $this->getUser();
@@ -39,7 +39,6 @@ class ProfileController extends AbstractController
 
         return $this->render('profile/index.html.twig', [
             "form"=>$profileForm->createView(),//on passe a la vue le rendu du formulaire
-            "user"=> $userRepository->findAll()
         ]);
     }
 

@@ -4,15 +4,17 @@ namespace App\Controller;
 
 use App\Entity\Faq;
 use App\Form\FaqType;
-use App\Entity\Commentaires;
-use App\Form\CommentairesType;
 use App\Form\UserType;
+use DateTimeImmutable;
+use App\Entity\CategoryFaq;
+use App\Entity\Commentaires;
+use App\Form\CategoryFaqType;
+use App\Form\CommentairesType;
 use App\Repository\FaqRepository;
+use App\Repository\UserRepository;
 use App\Repository\CategoryRepository;
 use Doctrine\Persistence\ObjectManager;
 use App\Repository\CategoryFaqRepository;
-use App\Repository\UserRepository;
-use DateTimeImmutable;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -46,6 +48,8 @@ class FaqController extends AbstractController
     {
         $faq = new Faq();
 
+        $user = $this->getUser();
+
         $form = $this->createFormBuilder($faq)
                 ->add('titre')
                 ->add('categorie')
@@ -55,6 +59,7 @@ class FaqController extends AbstractController
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()) {
+            $user->addFaqUser($faq);
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($faq);
             $entityManager->flush();
@@ -65,7 +70,7 @@ class FaqController extends AbstractController
         }
 
         return $this->render('faq/new.html.twig', [
-            'formFaq' => $form->createView()
+            'form' => $form->createView()
         ]);
     }
 
@@ -131,5 +136,36 @@ class FaqController extends AbstractController
             'categorie' => $categoryFaqRepository->find($id)
         ]);
     }
+
+    #[Route('/faq/{id}/edit', name: 'faq_edit', methods: ['GET', 'POST'])]
+    public function edit(Request $request, Faq $faq): Response
+    {
+        $form = $this->createForm(FaqType::class, $faq);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('profile', [], Response::HTTP_SEE_OTHER);
+        }
+
+        return $this->renderForm('faq/edit.html.twig', [
+            'faq'=> $faq,
+            'form' => $form,
+        ]);
+    }
+
+    #[Route('/{id}/delete', name: 'faq_delete', methods: ['GET','POST'])]
+    public function delete(Request $request, Faq $faq): Response
+    {
+        if ($this->isCsrfTokenValid('delete' . $faq->getId(), $request->request->get('_token'))) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->remove($faq);
+            $entityManager->flush();
+        }
+
+        return $this->redirectToRoute('profile', [], Response::HTTP_SEE_OTHER);
+    }
+
 
 }
