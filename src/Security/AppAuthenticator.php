@@ -54,7 +54,7 @@ class AppAuthenticator extends AbstractLoginFormAuthenticator
             return new RedirectResponse($this->urlGenerator->generate('app_logout'));
         }
         // For example:
-        //On recupère le role de l'utilisateur afin de rediriger sur le dashboard d'administration siil est admin ou sur la homme page si il est user
+        //On recupère le role de l'utilisateur afin de rediriger sur le dashboard d'administration si il est admin ou sur la home page si il est user
         $roles = $token->getUser()->getRoles();
         if(in_array("ROLE_ADMIN", $roles)){
             return new RedirectResponse($this->urlGenerator->generate('admin_dashboard'));

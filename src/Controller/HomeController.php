@@ -16,11 +16,10 @@ class HomeController extends AbstractController
     public function index(HomeRepository $homeRepository, VideoRepository $videoRepository): Response
     {
         return $this->render('home/index.html.twig', [
-            // 'homeContent' => $homeRepository->findOneBy(["active"=>true]),
-            //'videos' => $videoRepository->findAll(),
             'homes' => $homeRepository->findAll()
         ]);
     }
+    //Route qui affiche le contenu du coté utilisateur
     
     
 }

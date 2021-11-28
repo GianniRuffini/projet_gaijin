@@ -31,4 +31,5 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     // end if innerWidth
 });
+
 // DOMContentLoaded  end

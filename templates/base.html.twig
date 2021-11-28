@@ -2,7 +2,9 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <title>{% block title %}Gaijin{% endblock %}</title>
     
     
@@ -14,10 +16,16 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css">
 
-    <!--fontawesome-->
+    <!-- fontawesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <!-- fontgoogle -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
     <link rel="stylesheet" href="{{ asset( 'css/style.min.css') }}">
+    
+    
     {# <link rel="stylesheet" href="{{ asset( 'css/styles.css') }}"> #}
     
 {% block stylesheets %}{% endblock %}
@@ -89,7 +97,7 @@
 
                         <!-- liste de voyage -->
 
-                        {# si on est connecter on affiche l'iccone de la liste de voyage dans le menus #}
+                        {# si on est connecter on affiche l'icone de la liste de voyage dans le menus #}
                         {% if is_granted('ROLE_USER') %}
                             <a
                                 class="icon2 btn btn-primary btn-floating m-1"
@@ -100,56 +108,9 @@
                             </a>
                         {% endif %}
 
-                        <!-- Facebook -->
-                            {# <a
-                                class="icon3 btn btn-primary btn-floating m-1"
-                                href="https://www.facebook.com/kanpai.fr"
-                                role="button"
-                                ><i class="fab fa-facebook-f"></i
-                            ></a> #}
-
-                        <!-- Twitter -->
-                            {# <a
-                                class="icon4 btn btn-primary btn-floating m-1"
-                                href="https://twitter.com/KanpaiFR"
-                                role="button"
-                                ><i class="fab fa-twitter"></i
-                            ></a> #}
-
-                        <!-- Instagram -->
-                            {# <a
-                                class="icon5 btn btn-primary btn-floating m-1"
-                                href="https://www.instagram.com/kanpai.fr/"
-                                role="button"
-                                ><i class="fab fa-instagram"></i
-                            ></a> #}
-                            
-                        <!-- youtube -->
-                            {# <a
-                                class="icon6 btn btn-primary btn-floating m-1"
-                                href="https://www.youtube.com/user/Kanpaifr"
-                                role="button"
-                                ><i class="fas fa-play"></i>
-                            </a>
-                        #}
                     </li>
 
                 </ul>
-
-                    {# {% if is_granted('ROLE_USER') %}
-                    <li class="nav-item text-white align-items-center d-flex ms-auto">
-                        <span>Bienvenue
-                        {% if app.user.pseudo is defined and app.user.pseudo is not null%}
-                        {{ app.user.pseudo }}
-                        {% elseif app.user.firstname is defined and app.user.firstname is not null %}
-                        {{ app.user.firstname}}
-                        {% else %}
-                        {{ app.user.email}}
-                    {% endif %}
-                        </span>
-                    </li>
-                    {% endif %} #}
-
                 
             </div>
 

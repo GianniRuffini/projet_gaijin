@@ -20,6 +20,7 @@ class AdminHomeController extends AbstractController
             'homes' => $homeRepository->findAll(),
         ]);
     }
+    // Route qui affiche la page principal
 
     #[Route('/new', name: 'admin_home_new', methods: ['GET', 'POST'])]
     public function new(Request $request): Response
@@ -41,6 +42,7 @@ class AdminHomeController extends AbstractController
             'form' => $form,
         ]);
     }
+    // Route qui affiche la création d'un nouveau contenu
 
     #[Route('/{id}', name: 'admin_home_show', methods: ['GET'])]
     public function show(Home $home): Response
@@ -49,6 +51,7 @@ class AdminHomeController extends AbstractController
             'home' => $home,
         ]);
     }
+    // Route qui affiche le contenu
 
     #[Route('/{id}/edit', name: 'admin_home_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Home $home ): Response
@@ -68,6 +71,7 @@ class AdminHomeController extends AbstractController
             'form' => $form,
         ]);
     }
+    // Route qui modifie le contenu
 
     #[Route('/{id}', name: 'admin_home_delete', methods: ['POST'])]
     public function delete(Request $request, Home $home): Response
@@ -80,4 +84,5 @@ class AdminHomeController extends AbstractController
 
         return $this->redirectToRoute('admin_home_index', [], Response::HTTP_SEE_OTHER);
     }
+    // Route qui supprime le contenu
 }

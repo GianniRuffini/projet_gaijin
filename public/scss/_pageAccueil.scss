@@ -6,7 +6,7 @@ body{
         background-color: #f5f5ef;
         box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
         text-align: center;
-        border-spacing: 5px;
+        border-spacing: 2px;
         transition: 0.5s ease;
         cursor: pointer;
     }
@@ -19,7 +19,7 @@ body{
 
 
     .voyage:hover{
-        transform: scale(1.2);
+        transform: scale(1.1);
         box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
     }
 
@@ -40,7 +40,7 @@ body{
     }
 
     .carte:hover{
-        transform: scale(1.2);
+        transform: scale(1.1);
         box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
     }
 
@@ -87,6 +87,26 @@ body{
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
+    }
+    
+    @media screen and (max-width:1024px) 
+    {
+        .voyage{
+            transition: none;
+        }
+        .voyage:hover{
+        transform: none;
+        }
+    }
+
+    @media screen and (max-width:768px) 
+    {
+        .voyage{
+            transition: none;
+        }
+        .voyage:hover{
+        transform: none;
+        }
     }
 }
 
