@@ -19,7 +19,7 @@
             <tr>
                 <td>{{ prefecture.id }}</td>
                 <td>{{ prefecture.titre }}</td>
-                <td>{{ prefecture.description }}</td>
+                <td>{{ prefecture.description|striptags|slice(0, 200) ~ '...'   }}</td>
                 <td>
                     <a href="{{ path('admin_prefecture_show', {'id': prefecture.id}) }}">show</a>
                     <a href="{{ path('admin_prefecture_edit', {'id': prefecture.id}) }}">edit</a>

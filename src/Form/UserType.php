@@ -18,7 +18,9 @@ class UserType extends AbstractType
             ->add('pseudo')
             ->add('name')
             ->add('firstname')
-            ->add('country', CountryType::class)
+            ->add('country', CountryType:: class, array(
+            "preferred_choices" => ['FR']
+            ))
             ->add('email', EmailType::class)
             ->add('role', ChoiceType::class, ['choices'=> [
                 "Administrateur" => "ROLE_ADMIN",

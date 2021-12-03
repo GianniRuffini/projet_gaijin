@@ -21,7 +21,7 @@
                 <td>{{ contenu.id }}</td>
                 <td>{{ contenu.titre }}</td>
                 <td>{{ contenu.sousTitre }}</td>
-                <td>{{ contenu.description }}</td>
+                <td>{{ contenu.description|striptags|slice(0, 200) ~ '...'  }}</td>
                 <td>
                     <a href="{{ path('admin_contenus_show', {'id': contenu.id}) }}">show</a>
                     <a href="{{ path('admin_contenus_edit', {'id': contenu.id}) }}">edit</a>

@@ -10,11 +10,11 @@
             Liste des 
             {{ title }}
         </h1>
-        <div class="d-flex justify-content-between " style="">
+        {# <div class="d-flex justify-content-between " style="">
             <a href="{{ path('admin_user_new') }}" class="btn-sm btn-success my-3" >
                 Nouveau
             </a>
-        </div>
+        </div> #}
     </div>
 
     <table class="table" data-sorting="true" data-filtering="true" data-paging="true" data-paging-size="3">
@@ -53,9 +53,9 @@
                         {% endif %}
                     </td>
                     <td class="d-flex justify-content-end">
-                        <a href="{{ path('admin_user_show', {'id': user.id}) }}" class="text-dark btn-sm btn-secondary">
+                        {# <a href="{{ path('admin_user_show', {'id': user.id}) }}" class="text-dark btn-sm btn-secondary">
                             <i class="fa fa-eye" aria-hidden="true"></i>
-                        </a>
+                        </a> #}
                         <a href="{{ path('admin_user_edit', {'id': user.id, 'role':role}) }}" class="text-dark btn-sm btn-secondary ms-3">
                             <i class="fa fa-pencil" aria-hidden="true"></i>
                         </a>

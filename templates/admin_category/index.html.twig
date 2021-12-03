@@ -24,7 +24,7 @@
                 <td>{{ category.id }}</td>
                 <td>{{ category.titre }}</td>
                 <td>{{ category.sousTitre }}</td>
-                <td>{{ category.description }}</td>
+                <td>{{ category.description|striptags|slice(0, 200) ~ '...'  }}</td>
                 <td>
                     <a class="btn-sm btn-secondary" style="color: #ECECEC" href="{{ path('admin_category_show', {'id': category.id}) }}"><i class="fa fa-eye" aria-hidden="true"></i></a>
                     <a class="btn-sm btn-secondary" style="color: #ECECEC" href="{{ path('admin_category_edit', {'id': category.id}) }}"><i class="fa fa-pencil" aria-hidden="true"></i></a>

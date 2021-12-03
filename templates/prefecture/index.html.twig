@@ -15,16 +15,16 @@
 
     <div class="container tab-pane fade show active" id="liste" role="tabpanel" aria-labelledby="profile-tab">
         <div class="row">
-            <div class="col-12 col-md-6 col-lg-6 mb-4">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-6 mb-4">
             {# on affiche la carte  #}
                 <div class="card" style="margin: auto; background-color: #f5f5ef; box-shadow: 5px 5px 15px rgba(0,0,0,0.9); text-align: center;" id="maCarte"></div>
             </div>
-            <div class="col-12 col-md-6 col-lg-6 mb-4">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-6 mb-4">
                 <div class="row">
                 {# on affiche tout les favoris dans la list #}
                     {% if app.user.prefectureList|length > 0 %}
                         {% for prefecture in app.user.prefectureList %}
-                            <div class="col-12 col-md-6 col-lg-6 mb-4">
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-6 mb-4">
                                 <div class="card" style="margin: auto; width:270px; background-color: #f5f5ef; box-shadow: 5px 5px 15px rgba(0,0,0,0.9); text-align: center;">
                                     <div class="prefecture" style="" data-titre="{{ prefecture.titre }}" data-longitude="{{ prefecture.longitude }}" data-latitude="{{ prefecture.latitude }}">
                                         <h6 class="mt-2 list-favori">

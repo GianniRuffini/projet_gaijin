@@ -22,7 +22,7 @@
             <tr>
                 <td>{{ contenus_accueil.titre }}</td>
                 <td>{{ contenus_accueil.sousTitre }}</td>
-                <td>{{ contenus_accueil.description }}</td>
+                <td>{{ contenus_accueil.description|striptags|slice(0, 200) ~ '...'  }}</td>
                 <td><img src="{{ asset('images/accueil/' ~ contenus_accueil.imageName ) }}" alt="{{ contenus_accueil.titre }}" class="img-list-admin"></td>
                 <td>
                     <a class="btn-sm btn-secondary" style="color: #ECECEC" href="{{ path('admin_contenus_accueil_show', {'id': contenus_accueil.id}) }}"><i class="fa fa-eye" aria-hidden="true"></i></a>

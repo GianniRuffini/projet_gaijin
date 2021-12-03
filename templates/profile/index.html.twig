@@ -17,13 +17,13 @@
 {# TabPanel #}
 <div class="container p-3 mt-3 mb-3">
     <ul class="nav nav-tabs my-5" id="myTab" role="tablist">
-        <div class="deco">
+        {# <div class="deco">
             {% if is_granted('ROLE_USER') %}
             <a class="btn btn-secondary" href="{{ path('app_logout') }}">
                 Déconnexion
             </a>
             {% endif %}
-        </div>
+        </div> #}
             <li class="nav-item" role="presentation">
                 <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#info" type="button" role="tab" aria-controls="home" aria-selected="false">
                     Mes informations
@@ -56,11 +56,14 @@
                             <p>{{ faq.question|raw }}</p>
                         {% endif %}
                     
-                    <div >
-                
-                        <a class="btn-sm btn-secondary" href="{{ path('faq_edit', {'id': faq.id}) }}"><i class="fas fa-pencil-alt"></i></a>
+                    <div class="btn-group justify-content-center ">
+                        <a class="btn-sm btn-secondary mx-2" href="{{ path('faq_edit', {'id': faq.id}) }}"><i class="fas fa-pencil-alt"></i></a>
                         {{ include('faq/_delete.html.twig') }}
                     </div>
+                    <div class="separator1 my-3"></div>
+                        {% else %}
+
+                        <p>Vous avez aucune quesrtion</p>
                     {% endfor %}
                 </div>
             </div>

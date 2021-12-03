@@ -5,8 +5,7 @@
     let marker;
     let prefectures = [];
 
-console.log($(".prefecture"))
-    //on boucle chaque prefecture et on recupère le titre 
+    //on boucle chaque prefecture et on recupère les données 
     $(".prefecture").each(function(){
         prefectures[$(this).attr("data-titre")] = {"lat" : $(this).attr("data-latitude"), "lon" : $(this).attr("data-longitude")}
     })
@@ -39,7 +38,7 @@ console.log($(".prefecture"))
 
     //on parcourt les differentes villes
     for( let prefecture in prefectures){
-        //on crée le marqueur et on lui attribut un cercle et un popup
+        //on crée le marqueur et on lui attribut un popup
             marker = L.marker([prefectures[prefecture].lat, prefectures[prefecture].lon], {icon: icone})
             // .addTo(carte); //inutile lors de l'utilisation des clusters
             marker.bindPopup("<p>"+prefecture+"</p>");

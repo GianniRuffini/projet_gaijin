@@ -27,7 +27,10 @@
             <div class="col-12 col-md-6 col-lg-4 mb-4">
                 <div class="card">
                     <div class="card-title">
-                        <h2>{{ faqs.titre }}</h2>
+                        <a href="{{ path('faq_show', {'id': faqs.id}) }}">
+        
+                            <h2>{{ faqs.titre }}</h2>
+                        </a>
                     </div>
                     <div class="card-body">
                         {{ faqs.question }}

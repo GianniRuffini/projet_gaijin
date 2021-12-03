@@ -78,45 +78,33 @@ class FaqController extends AbstractController
     public function showFaq(FaqRepository $faqRepository, Request $request, UserRepository $userRepository ,int $id): Response
     {
         $faq = $faqRepository->findOneBy(['id' => $id]);
-
         if (!$faq) {
             throw new NotFoundHttpException('Pas de question trouvée');
         }
-
         //Partie commentaire
         //on crée le commantaire "vierge"
         $commentaire = new Commentaires;
-
         //on recupère le User
         $user = $this->getUser();
-
         //on génère le formulaire
         $form = $this->createForm(CommentairesType::class, $commentaire, ['user'=>$user]);
-
         $form->handleRequest($request);
-
         //traitement du formulaire
         if($form->isSubmitted() && $form->isValid()){
             $commentaire->setCreatedAt(new DateTimeImmutable());
             $commentaire->setAnnonces($faq);
-
             //on récupère le contenu du champ parent
             $parentid = $form->get("parent")->getData();
-
             //on va chercher le commentaire correspondant
             $em= $this->getDoctrine()->getManager();
-
             if($parentid != null){
                 $parent = $em->getRepository(Commentaires::class)->find($parentid);
             }
-
             //on definit le parent
             $commentaire->setParent($parent ?? null);
             $commentaire->setUser($user);
-
             $em->persist($commentaire);
             $em->flush();
-
             $this->addFlash('success', 'Votre commentaire à bien été envoyé');
             return $this->redirectToRoute('faq_show', ['id'=>$faq->getId()]);
         }
