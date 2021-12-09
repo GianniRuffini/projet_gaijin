@@ -1,19 +1,27 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-    Edit Faq
+    Modifier la question
 {% endblock %}
 
 {% block body %}
+<div class="container">
+<a class="btn-sm btn-secondary mb-4" href="{{ path('profile') }}">
+    Retour
+        
+</a>
+
     <h1>
-        Edit Faq
+        Modifier la question
     </h1>
+   
 
     {{ include('faq/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('profile') }}">
-        back to list
-    </a>
+    
 
     {{ include('faq/_delete.html.twig') }}
+
+</div>
+
 {% endblock %}
