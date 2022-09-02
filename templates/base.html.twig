@@ -59,7 +59,7 @@
                     {{ render(controller('App\\Controller\\CategoryController::categoryMenu')) }}
 
                     {# si on est connecter on affiche les routes dans le menus #}
-                    {% if is_granted('ROLE_USER') %}
+                    {# {% if is_granted('ROLE_USER') %}
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">
                             COMMUNAUTE
@@ -75,7 +75,7 @@
                                 DECONNEXION
                                 </a>
                             </div>
-                        {% endif %}
+                        {% endif %} #}
                     </li>
 
                     <li class="ps-2 m-auto" style="display:inline-block;">
@@ -84,7 +84,7 @@
                     <!-- User -->
 
                         {# si on est connecter on affiche les icones dans le menus #}
-                        {% if is_granted('ROLE_USER') %} 
+                        {# {% if is_granted('ROLE_USER') %} 
                             <a
                                 class="icon1 btn btn-primary btn-floating m-1"
                                 href="{{ path('profile') }}"
@@ -96,13 +96,13 @@
                                 href="{{ path('app_login') }}"
                                 role="button"><i class="fas fa-user"></i>
                             </a>
-                        {% endif %}
+                        {% endif %} #}
 
 
                         <!-- liste de voyage -->
 
                         {# si on est connecter on affiche l'icone de la liste de voyage dans le menus #}
-                        {% if is_granted('ROLE_USER') %}
+                        {# {% if is_granted('ROLE_USER') %}
                             <a
                                 class="icon2 btn btn-primary btn-floating m-1"
                                 href="{{path('prefecture')}}"
@@ -110,7 +110,7 @@
                                 ><i class="fas fa-map-marked-alt"></i>
 
                             </a>
-                        {% endif %}
+                        {% endif %} #}
 
                     </li>
 
@@ -137,10 +137,10 @@
     <div class="container font-weight-bold">
         <ul class="d-flex justify-content-center list-unstyled flex-wrap" style=" margin:auto;">
             <!-- Copyright -->
-            <li  class="pl-2 pr-3 position-relative" style="color:#fff;"> Gaijin ©2021 -- </li>
+            <li  class="pl-2 pr-3 position-relative" style="color:#fff;"> AÏKIDO CLUB BRIE COMTE ROBERT ©2022 -- </li>
             <!-- End Copyright -->
                 <li class="pl-2 pr-3 position-relative">
-                    <a href="#" style="color:#dadacb">À propos - </a>
+                    <a href="#" style="color:#dadacb"> À propos - </a>
                 </li>
                 <li class="pl-2 pr-3 position-relative">
                     <a href="#" style="color:#dadacb">Mentions légales - </a>
@@ -150,10 +150,6 @@
                 </li>
                 <li class="pl-2 pr-3 position-relative">
                     <a href="#" style="color:#dadacb">Sites amis - </a>
-                </li>
-                    <li class="pl-2 pr-3 position-relative">
-                    <a href="#" style="color:#dadacb">Plan du site</a>
-                </li>
             </ul>
         </div>
     </div>
@@ -164,9 +160,14 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-18 text-center">
-                    <p><a href="http://collectif-japon.fr"><img alt="Collectif Japon" data-entity-type="" data-entity-uuid="" src="{{ asset("images/collectif-japon-logo.png") }}" class="lazy" /></a></p>
+<p>
+    <a href="http://cercle-aikido-traditionnel.com/">
+        <img alt="Collectif Japon" data-entity-type="" data-entity-uuid="" src="{{ asset("images/logo-cat.png") }}" class="lazy" />
+    </a>
+</p>
 
-    <p style="color:#fff; margin:auto"><em>Si GAIJIN vous a aidé ou renseigné d'une manière ou d'une autre, nous serions très heureux que vous partagiez le site autour de vous !</em></p>
+
+    <p style="color:#fff; margin:auto"><em>Si le site du club vous a aidé ou renseigné d'une manière ou d'une autre, nous serions très heureux que vous partagiez le site autour de vous !</em></p>
 
             </div>
         </div>

@@ -3,10 +3,16 @@
 {% block title %}{% endblock %}
 
 {% block body %}
-
+{% if home.contenusAccueil.imageName is defined and home.contenusAccueil.imageName is not null %}
+    
+    
     <div class="img1">
         <img src="{{ asset('images/accueil/' ~ home.contenusAccueil.imageName ) }}" alt="{{ home.contenusAccueil.titre }}">
-    </div> 
+    </div>
+    
+{% else %}
+    <div> <h1>coucou</h1></div>
+{% endif %}
     <div class="container">
         <h1 class="text-center">
             {{ home.contenusAccueil.titre }}
